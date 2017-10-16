@@ -69,27 +69,30 @@
             </a>
         </div>
 
-
-        <!--Timer///////////////////////////////////////////////////////////-->
-        <div id="div_promocao" class="row no-gutters" style="height: 70px; background-color: #27cbc0; color: white;">
-            <div class="col-4 text-center" style="border-right: 1px solid black; padding-top: 15px;">
+        <!--TIMER////////////////////////////////////////////////////////////-->
+        <div id="div_promocao" class="row no-gutters" style="padding-top: 10px; padding-bottom: 10px;">
+            <div class="col-2"></div>
+            <div class="col-2 text-right" style="font-size: 17px; border-right: 1px solid black;">
                 <p class="text-left">DIA DOS CADERNOS!<br/> Todos os cadernos com...</p>
             </div>
-            <div class="col-4 text-center" style=" padding-top: 15px;">
+            <div class="col-4 " style="border-right: 1px solid black;">
                 <div class="row no-gutters">
-                    <div class="col-4 text-center">
-                        <p>20DD%<br/> de  desconto</p>  
+                    <div class="col-3 text-center">
+                        <p style="text-indent: 0px;">as dasd asd as asdas d asd</p>
                     </div>
-                    <div id="div_timer" class="col-8 text-center">
-                        <p id="timer_days"style="font-family: 'Courgette', cursive; "></p>
-                        <p id="timer_hours"style="font-family: 'Courgette', cursive; text-align: center; display:inline;"></p>
-                        <p id="timer_mins"style="font-family: 'Courgette', cursive; text-align: center; display:inline;"></p>
-                        <p id="timer_secs"style="font-family: 'Courgette', cursive; text-align: center; display:inline;"></p>
+                    <div class="col-9 text-center">
+                        <div id="div_timer" style="padding-top: 5px;">
+                            <p id="timer_days"></p>
+                            <p id="timer_hours"></p>
+                            <p id="timer_mins"></p>
+                            <p id="timer_secs"></p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-4 text-center" style="border-left: 1px solid black; padding-top: 15px;">
-                <button type="button" class="btn" style="background-color: #ea5b2b; color: white;">CONFIRA</button>
+            <div class="col-4 text-center" style=" padding-top: 5px;">
+                <button type="button" class="btn" style="background-color: #ea5b2b; 
+                        color: white;">CONFIRA</button>
             </div>
         </div>
 
@@ -213,75 +216,16 @@
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="container produtos">
-            <div class="row justify-content-md-center">
-                <div class="col">
-                    <div class="card produtosHover" >
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h4 >CARTÃO DE VISITA</h4>
-                                <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.jpg" alt="Card image cap">
-                                <a href="produto-cartao-de-visita.html" class="btn btn-primary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card produtosHover" >
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h4 >CARTÃO DE VISITA</h4>
-                                <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.jpg" alt="Card image cap">
-                                <a href="produto-cartao-de-visita.html" class="btn btn-primary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card produtosHover" >
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h4 >CARTÃO DE VISITA</h4>
-                                <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.jpg" alt="Card image cap">
-                                <a href="produto-cartao-de-visita.html" class="btn btn-primary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col" >
-                    <div class="card produtosHover" >
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h4 class="card-title">IMÃ DE GELADEIRA</h4>
-                                <img class="fotosProdutos" src="_imagens/produtos/ima.jpg" alt="Card image cap">
-                                <a href="#" class="btn btn-primary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card produtosHover" >
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h4 class="card-title">10 BLOCOS 2V</h4>
-                                <img class="fotosProdutos" src="_imagens/produtos/bloco.jpg" alt="Card image cap">
-                                <a href="#" class="btn btn-primary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!--FOOTER////////////////////////////////////////////////////////-->
+    <iframe src="modelos/footer.html" name="janela" id="frame-footer" 
+            frameBorder="0" scrolling="no" ></iframe>
 
-        <!--FOOTER////////////////////////////////////////////////////////-->
-        <iframe src="modelos/footer.html" name="janela" id="frame-footer" 
-                frameBorder="0" scrolling="no" ></iframe>
-
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="_javascript/jquery-3.2.1.js" type="text/javascript"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"  crossorigin="anonymous"></script>
-        <script src="bootstrap-4.0.0-beta/js/bootstrap.js" type="text/javascript"></script>
-    </body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="_javascript/jquery-3.2.1.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"  crossorigin="anonymous"></script>
+    <script src="bootstrap-4.0.0-beta/js/bootstrap.js" type="text/javascript"></script>
+</body>
 </html>

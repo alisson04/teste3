@@ -1,18 +1,33 @@
 @charset "UTF-8";
 
 /*DIV PROMOÇÃO----------------------------------------------------------------*/
-div#div_timer p#timer_days{
-    text-align: center; 
+div#div_promocao{ 
+    height: 70px; 
+    background-color: #27cbc0; 
+    color: white;
+}
+
+div#div_timer{ 
+    font-size: 25px;
+}
+
+div#div_timer p#timer_days, p#timer_hours, p#timer_mins, p#timer_secs{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 5px 5px;
     display:inline;
-    background-color: #0a9b91; 
-    font-size: 30px;
+    background-color: #0a9b91;
+    display:inline;
+    margin-left: 0px; margin-right: 0px;
 }
 
 /*PRODUTOS----------------------------------------------------*/
 div#div_produtos{/*container de produtos*/
-    margin-top: 500px;
-    margin-bottom: 50px; 
-    background-color: #f60404;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #D3D3D3;
 }
 
 img.fotosProdutos{/*tamanho das imagens dos produtos*/

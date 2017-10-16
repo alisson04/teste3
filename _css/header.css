@@ -1,27 +1,62 @@
 @charset "UTF-8";
-@font-face{
-    font-family: 'FonteLogo';
-    src: url("../_fonts/bubblegum-sans-regular.otf");
+
+div#div_topo_cabecalho{
+    height: 25px; 
+    background-color: #ebebeb;
+    font-weight: bold;
+    font-size: 15px;
+    color: #231f20;
 }
 
-header#cabecalho img#icone{
-    position: relative;
-    left: 10%;
-    top: -10px;
+div#div_topo_cabecalho ul{
+    list-style: none;
+    position: absolute;
+    top: 0px;
 }
 
+nav#menuT{
+    display: block;
+}
+
+nav#menuT li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav#menuT a{
+    color: #231f20;
+}
+
+/*HEADER CABEÇALHO------------------------------------------------------------*/
 header#cabecalho{
     border-bottom: 1px #606060 solid;
     height: 100px;
-    background-color: #D3D3D3;
+    background-color: #FFFFFF;
     /*background: url("../_imagens/logo.png") no-repeat 0px 100px;*/
 }
 
-/* Formatação de imagens com legendas */
-figure.foto-legenda{
+/*ICONE CABEÇALHO-------------------------------------------------------------*/
+header#cabecalho img#icone{
     position: relative;
-    border: 8px solid white;
-    box-shadow: 1px 1px 4px black;
+    left: 30%;
+    top: 0px;
+    width: 15%;
+}
+/*BOTÃO TODOS OS PRODUTOS-----------------------------------------------------*/
+a#a_todos_os_produtos{
+    color: black; 
+    border: 1px solid #b1e5fa;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 10px 10px;
+    margin-left: 35%;
+    text-decoration: none;
+}
+
+a#a_todos_os_produtos:hover{/*HOVER*/
+    border: 2px solid #b1e5fa;
 }
 
 /* Formatação do menu*/
@@ -31,15 +66,14 @@ nav#menu{
 
 nav#menu ul{
     list-style: none;
-    text-transform: uppercase;
     position: absolute;
-    top: 20px;
-    left: 50%;
+    top: 0px;
 }
 
 nav#menu li{
     display: inline-block;
     padding: 10px;
+    margin-right: 20px;
 }
 
 nav#menu h1{
@@ -47,30 +81,21 @@ nav#menu h1{
 }
 
 nav#menu a{
-    color: #1aaeae;
+    color: black;
     text-decoration: none;
-    transition: color 0.5s;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 nav#menu a:hover{
-    color: #e84f25;
+    color: #27cbc0;
     text-decoration: underline;
 }
 
-section#corpo{
-    display: block;
-    width: 500px;
-    float: left;
-    border-right: 1px solid #606060;
-    padding-right: 15px;
+img#icon_carrinho_de_compras{
+    width: 64px; 
+    margin-left: 40%;
 }
 
-footer#rodape{
-    clear: both;
-    border-top: 1px solid #606060;
-}
-
-footer#rodape p{
-    text-align: center;
+img#icon_carrinho_de_compras:hover{
+    width: 70px;
 }

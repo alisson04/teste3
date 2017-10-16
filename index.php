@@ -13,7 +13,7 @@
 
         <!--JAVASCRIPT-->
         <script language="javascript" src="_javascript/funcoes.js" ></script>
-        <script language="javascript" src="_javascript/parent.js" ></script>
+        <script language="javascript" src="_javascript/timer.js" ></script>
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-beta/css/bootstrap.css" >
@@ -27,12 +27,11 @@
 
     <body style="font-family: 'Share Tech Mono', monospace; margin: 0px 0px 0px 0px; background-color: #D3D3D3;">
         <!--HEADER////////////////////////////////////////////////////////
-        <iframe src="modelos/header.html" name="janela" id="frame-header" 
-                frameBorder="0" scrolling="no" ></iframe>-->
-
-        <!-- include -->
-        <?php $pagina="index"; include"./modelos/header.php";?>
-
+        <?php
+        $pagina = "index";
+        include"./modelos/header.php";
+        ?>
+        
         <!--CAROUSEL////////////////////////////////////////////////////////-->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -70,42 +69,32 @@
             </a>
         </div>
 
-        <!-- Display the countdown timer in an element -->
-        <p id="demo"style="font-family: 'Courgette', cursive;"></p>
 
-        <script>
-            // Set the date we're counting down to
-            var countDownDate = new Date("Oct 14, 2017 23:59:59").getTime();
-
-            // Update the count down every 1 second
-            var x = setInterval(function () {
-
-                // Get todays date and time
-                var now = new Date().getTime();
-
-                // Find the distance between now an the count down date
-                var distance = countDownDate - now;
-
-                // Time calculations for days, hours, minutes and seconds
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                // Display the result in the element with id="demo"
-                document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-                        + minutes + "m " + seconds + "s ";
-
-                // If the count down is finished, write some text 
-                if (distance < 0) {
-                    clearInterval(x);
-                    document.getElementById("demo").innerHTML = "EXPIRED";
-                }
-            }, 1000);
-        </script>
+        <!--Timer///////////////////////////////////////////////////////////-->
+        <div id="div_promocao" class="row no-gutters" style="height: 70px; background-color: #27cbc0; color: white;">
+            <div class="col-4 text-center" style="border-right: 1px solid black; padding-top: 15px;">
+                <p class="text-left">DIA DOS CADERNOS!<br/> Todos os cadernos com...</p>
+            </div>
+            <div class="col-4 text-center" style=" padding-top: 15px;">
+                <div class="row no-gutters">
+                    <div class="col-4 text-center">
+                        <p>20DD%<br/> de  desconto</p>  
+                    </div>
+                    <div id="div_timer" class="col-8 text-center">
+                        <p id="timer_days"style="font-family: 'Courgette', cursive; "></p>
+                        <p id="timer_hours"style="font-family: 'Courgette', cursive; text-align: center; display:inline;"></p>
+                        <p id="timer_mins"style="font-family: 'Courgette', cursive; text-align: center; display:inline;"></p>
+                        <p id="timer_secs"style="font-family: 'Courgette', cursive; text-align: center; display:inline;"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 text-center" style="border-left: 1px solid black; padding-top: 15px;">
+                <button type="button" class="btn" style="background-color: #ea5b2b; color: white;">CONFIRA</button>
+            </div>
+        </div>
 
         <!--PRODUTOS////////////////////////////////////////////////////////-->
-        <div class="container produtos">
+        <div id="div_produtos" class="container produtos">
             <div class="row justify-content-md-center">
                 <div class="col">
                     <div class="card produtosHover" >

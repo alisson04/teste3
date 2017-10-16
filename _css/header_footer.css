@@ -1,0 +1,19 @@
+@charset "UTF-8";
+@font-face{
+    font-family: 'FonteLogo';
+    src: url("../_fonts/bubblegum-sans-regular.otf");
+}
+
+/*IFRAMES----------------------------------------------------*/
+iframe{
+    width: 100%; 
+    display:block;
+}
+
+iframe#frame-header{
+    margin-bottom: 0px;
+}
+
+iframe#frame-footer{
+    margin-top: 50px;
+}

@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/*CORPO DA PAGINA----------------------------------------------------*/
+div#interface{
+    background-color: white;
+    margin: 50px auto  50px auto;
+    padding: 10px;
+    height: 600px;
+}
+
+/*CORPO DO CAROUSEL DE PRODUTO----------------------------------------------------*/
+section#corpo{
+    display: block;
+    width: 40%;
+    height: 500px;
+    float: left;
+    padding-right: 20px;
+}
+
+
+/*CORPO DA DESCRIÇÃO PRODUTO----------------------------------------------------*/
+aside#lateral{
+    display: block;
+    width: 60%;
+    height: 500px;
+    float: right;
+    padding: 20px 20px 20px 20px;
+    border-left: 1px solid #606060;
+    padding-left: 15px;
+}
+
+
+aside#lateral h1#produto_preco{
+    color: #e84f25;
+}
+
+aside#lateral h3{
+    color: #A9A9A9;
+}
+
+/*CONFIGURAÇÃO PRODUTO----------------------------------------------------*/
+section#corpo_config_produto{
+    display: block;
+    width: 70%;
+    float: left;
+    padding-right: 20px;
+}
+
+aside#aside_config_produto{
+    display: block;
+    width: 30%;
+    float: right;
+    padding: 20px 20px 20px 20px;
+    border-left: 1px solid #606060;
+    padding-left: 15px;
+}

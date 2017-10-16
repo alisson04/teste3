@@ -1,0 +1,76 @@
+@charset "UTF-8";
+@font-face{
+    font-family: 'FonteLogo';
+    src: url("../_fonts/bubblegum-sans-regular.otf");
+}
+
+header#cabecalho img#icone{
+    position: relative;
+    left: 10%;
+    top: -10px;
+}
+
+header#cabecalho{
+    border-bottom: 1px #606060 solid;
+    height: 100px;
+    background-color: #D3D3D3;
+    /*background: url("../_imagens/logo.png") no-repeat 0px 100px;*/
+}
+
+/* Formatação de imagens com legendas */
+figure.foto-legenda{
+    position: relative;
+    border: 8px solid white;
+    box-shadow: 1px 1px 4px black;
+}
+
+/* Formatação do menu*/
+nav#menu{
+    display: block;
+}
+
+nav#menu ul{
+    list-style: none;
+    text-transform: uppercase;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+}
+
+nav#menu li{
+    display: inline-block;
+    padding: 10px;
+}
+
+nav#menu h1{
+    display: none;
+}
+
+nav#menu a{
+    color: #1aaeae;
+    text-decoration: none;
+    transition: color 0.5s;
+    font-size: 20px;
+}
+
+nav#menu a:hover{
+    color: #e84f25;
+    text-decoration: underline;
+}
+
+section#corpo{
+    display: block;
+    width: 500px;
+    float: left;
+    border-right: 1px solid #606060;
+    padding-right: 15px;
+}
+
+footer#rodape{
+    clear: both;
+    border-top: 1px solid #606060;
+}
+
+footer#rodape p{
+    text-align: center;
+}

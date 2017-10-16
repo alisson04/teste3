@@ -1,0 +1,70 @@
+@charset "UTF-8";
+@font-face{
+    font-family: 'FonteLogo';
+    src: url("../_fonts/bubblegum-sans-regular.otf");
+}
+
+/*MODAL PRODUTOS----------------------------------------------------*/
+div#exampleModalLong{/*modal de produtos*/
+    width: 100%;
+    background-color: black;
+}
+
+/*PRODUTOS----------------------------------------------------*/
+div.produtos{/*container de produtos*/
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: #D3D3D3;
+}
+
+img.fotosProdutos{/*tamanho das imagens dos produtos*/
+    width: 100%;
+}
+
+div.produtosHover:hover{
+    background-color: black;
+}
+
+/*TEXTOS----------------------------------------------------*/
+p{
+    text-align: justify;
+    text-indent: 50px;
+}
+
+a{
+    color: #606060;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+/* Formatação de imagens com legendas */
+figure.foto-legenda{
+    position: relative;
+    border: 8px solid white;
+    box-shadow: 1px 1px 4px black;
+}
+
+figure.foto-legenda img{
+    width: 100%;
+    height: 100%;
+}
+
+figure.foto-legenda figcaption{
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: opacity 1s;
+}
+
+figure.foto-legenda:hover figcaption{
+    opacity: 1;
+}

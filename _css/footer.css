@@ -1,0 +1,43 @@
+@charset "UTF-8";
+@font-face{
+    font-family: 'FonteLogo';
+    src: url("../_fonts/bubblegum-sans-regular.otf");
+}
+
+footer#rodape img#icone{/*Imagem Logo*/
+    position: relative;
+    width: 400px;
+    height: 80px;
+    left: -10%;
+    top: -15%;
+}
+
+footer#rodape{
+    border-top: 1px solid #606060;
+    background-color: #808080;
+    height: 101px;
+}
+
+footer#rodape p{
+    text-align: center;
+    color: white;
+    margin-bottom: 0px; 
+}
+
+ul#social_links {
+    list-style: none;
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 100px;
+    left: 220px;
+}
+
+
+ul#social_links li{
+    display: inline-block;
+}
+
+ul#social_links img{
+    width: 36px;
+    height: 36px;
+}

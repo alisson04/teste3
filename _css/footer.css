@@ -1,9 +1,5 @@
 @charset "UTF-8";
-@font-face{
-    font-family: 'FonteLogo';
-    src: url("../_fonts/bubblegum-sans-regular.otf");
-}
-
+/*----------------------------------------------------------------------------*/
 footer#rodape img#icone{/*Imagem Logo*/
     position: relative;
     width: 400px;
@@ -12,18 +8,13 @@ footer#rodape img#icone{/*Imagem Logo*/
     top: -15%;
 }
 
-footer#rodape{
-    border-top: 1px solid #606060;
-    background-color: #808080;
-    height: 101px;
-}
-
 footer#rodape p{
     text-align: center;
     color: white;
     margin-bottom: 0px; 
 }
 
+/*SOCIAL LiNKS----------------------------------------------------------------*/
 ul#social_links {
     list-style: none;
     padding-left: 0px;
@@ -32,12 +23,44 @@ ul#social_links {
     left: 220px;
 }
 
-
 ul#social_links li{
     display: inline-block;
 }
 
 ul#social_links img{
     width: 36px;
+    height: 36px;
+}
+
+/*NEWSLATTER------------------------------------------------------------------*/
+
+.botao_color_0a9b91{
+    background-color: #0a9b91;
+    color: white;
+}
+
+.botao_color_0a9b91:hover{
+    background-color: #0ab6aa;
+}
+
+/*FORMAS DE PAGAMENTO---------------------------------------------------------*/
+ul#formas_de_pagamento {
+    list-style: none;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: white;
+    
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+ul#formas_de_pagamento li{
+    display: inline-block;
+    padding: 5px 5px;
+}
+
+ul#formas_de_pagamento img{
     height: 36px;
 }

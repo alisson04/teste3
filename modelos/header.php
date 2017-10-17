@@ -18,7 +18,7 @@
     </head>
 
     <body style="margin: 0px 0px 0px 0px;">
-        <header id="cabecalho" style="font-family: 'Open Sans', sans-serif;">
+        <header id="cabecalho" style="font-family: 'Open Sans', sans-serif; ">
             <!--TOPO DO CABEÇALHO-->
             <div id="div_topo_cabecalho" class="row no-gutters">
                 <!--MENU PRINCIPAL-->

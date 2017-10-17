@@ -5,6 +5,8 @@ div#div_promocao{
     height: 70px; 
     background-color: #27cbc0; 
     color: white;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 div#div_timer{ 
@@ -24,31 +26,92 @@ div#div_timer p#timer_days, p#timer_hours, p#timer_mins, p#timer_secs{
 }
 
 /*PRODUTOS----------------------------------------------------*/
-div#div_produtos{/*container de produtos*/
-    margin-top: 50px;
-    margin-bottom: 50px;
-    background-color: #D3D3D3;
+div#div_produtos_mais_vendidos{/*container de produtos*/
+    margin-left: 10%; 
+    margin-right: 10%; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+div#div_produtos_mais_vendidos .col{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.div_caixa_produto{/*caixa de exibição do produto*/
+    height: 450px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 5px 5px 5px #A9A9A9;
+    color: black;
+    
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.a_hover:hover{/*caixa de exibição do produto HOVER*/
+    text-decoration: none;
+}
+                   
+.texto_produto{
+    padding-top: 10px;
+    font-weight: bold;
 }
 
 img.fotosProdutos{/*tamanho das imagens dos produtos*/
     width: 100%;
+    padding-top: 10px;
 }
 
-div.produtosHover:hover{
-    background-color: black;
+/*BOTÕES OCULTOS DE PRODUTOS--------------------------------------------------*/
+.panel_de_botoes_ocultos {
+    position:relative; //Importante para que os botões estejam centralizados
+}
+.botoes_ocultos{
+    display:none; //garante que o botão não apareça na tela
+    margin:0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.panel_de_botoes_ocultos:hover .botoes_ocultos {
+    display:block; //Exibe os botões somente com o hover
 }
 
-/*TEXTOS----------------------------------------------------*/
-p{
-    text-align: justify;
-    text-indent: 50px;
+.botao_color_e47650{
+    background-color: #e47650;
+    color: white;
 }
 
-a{
-    color: #606060;
-    text-decoration: none;
+.botao_color_e47650:hover{
+    background-color: #ea5b2b;
 }
 
-a:hover{
-    text-decoration: underline;
+/*CLIENTEDES LINKS------------------------------------------------------------*/
+ul#clientes_links {
+    list-style: none;
+    padding-left: 0px;
+    padding-right: 0px;
+    background-color: white;
+    
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+ul#clientes_links li{
+    display: inline-block;
+    padding: 21px 5px;
+}
+
+ul#clientes_links li:hover{
+    background-color: #DCDCDC;
+}
+
+ul#clientes_links img{
+    height: 42px;
 }

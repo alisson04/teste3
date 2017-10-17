@@ -26,12 +26,12 @@
     </head>
 
     <body style="font-family: 'Share Tech Mono', monospace; margin: 0px 0px 0px 0px; background-color: #D3D3D3;">
-        <!--HEADER////////////////////////////////////////////////////////
+        <!--HEADER///////////////////////////////////////////////////////////-->
         <?php
         $pagina = "index";
         include"./modelos/header.php";
         ?>
-        
+
         <!--CAROUSEL////////////////////////////////////////////////////////-->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -70,17 +70,30 @@
         </div>
 
         <!--TIMER////////////////////////////////////////////////////////////-->
-        <div id="div_promocao" class="row no-gutters" style="padding-top: 10px; padding-bottom: 10px;">
+        <div id="div_promocao" class="row no-gutters" style="font-family: 'Open Sans', sans-serif;">
             <div class="col-2"></div>
-            <div class="col-2 text-right" style="font-size: 17px; border-right: 1px solid black;">
-                <p class="text-left">DIA DOS CADERNOS!<br/> Todos os cadernos com...</p>
+            <!--descrição da promoção-->
+            <div class="col-2 text-right" style="font-size: 17px; border-right: 1px solid black; padding-top: 5px; justify-content: center;">
+                <div class="row no-gutters" style="margin-bottom: 0px; justify-content: center;">
+                    <p style="margin-bottom: 0px; padding-bottom: 0px;">DIA DOS CADERNOS!</p>
+                </div>
+                <div class="row no-gutters" style="justify-content: center;">
+                    <p style="padding-bottom: 0px; margin-bottom: 0px;">Todos os cadernos com...</p>
+                </div>
             </div>
+            <!--Timer e valor da promoção-->
             <div class="col-4 " style="border-right: 1px solid black;">
                 <div class="row no-gutters">
                     <div class="col-3 text-center">
-                        <p style="text-indent: 0px;">as dasd asd as asdas d asd</p>
+                        <div class="row no-gutters" style="margin-bottom: 0px; justify-content: center;">
+                            <p style="text-indent: 0px; font-size: 30px; margin-bottom: 0px; padding-bottom: 0px;">20%</p>
+                        </div>
+                        <div class="row no-gutters" style="line-height:0px; 
+                             justify-content: center;">
+                            <p style="text-indent: 0px; padding-bottom: 0px; margin-bottom: 0px;">de desconto</p>
+                        </div>
                     </div>
-                    <div class="col-9 text-center">
+                    <div class="col-9 text-center" style="padding-top: 10px;">
                         <div id="div_timer" style="padding-top: 5px;">
                             <p id="timer_days"></p>
                             <p id="timer_hours"></p>
@@ -90,142 +103,214 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4 text-center" style=" padding-top: 5px;">
-                <button type="button" class="btn" style="background-color: #ea5b2b; 
-                        color: white;">CONFIRA</button>
+            <!--botão da promoção-->
+            <div class="col-4 text-center" style="padding-top: 10px;">
+                <button type="button" class="btn botao_color_e47650">CONFIRA</button>
             </div>
         </div>
 
-        <!--PRODUTOS////////////////////////////////////////////////////////-->
-        <div id="div_produtos" class="container produtos">
-            <div class="row justify-content-md-center">
+        <!--PRODUTOS////////////////////////////////////////////////////////--> 
+        <div id="div_produtos_mais_vendidos" style="font-family: 'Open Sans', sans-serif;">
+            <div class="row justify-content-md-center" style="padding-top: 20px;">
                 <div class="col">
-                    <div class="card produtosHover" >
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h4 >CARTÃO DE VISITA</h4>
-                                <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.jpg" alt="Card image cap">
-                                <a href="produto-cartao-de-visita.html" class="btn btn-primary">Veja mais</a>
+                    <a class="a_hover" href="produto-cartao-de-visita.html" style="display:block;">
+                        <div class="div_caixa_produto" >
+                            <div class="panel_de_botoes_ocultos"><!--Div de flutuação do botão oculto-->
+                                <div class="botoes_ocultos"><!--Botões ocultos-->
+                                    <button type="button" class="btn btn-lg botao_color_e47650">CONFIRA</button>
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="texto_produto">Cartão de Visita</h4>
+                                    <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.png" alt="Card image cap">
+                                    <h4 class="texto_produto">A partir de R$ 10,99</h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card produtosHover" >
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h4 >CARTÃO DE VISITA</h4>
-                                <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.jpg" alt="Card image cap">
-                                <a href="produto-cartao-de-visita.html" class="btn btn-primary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col">
-                    <div class="card produtosHover" >
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h4 >CARTÃO DE VISITA</h4>
-                                <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.jpg" alt="Card image cap">
-                                <a href="produto-cartao-de-visita.html" class="btn btn-primary">Veja mais</a>
+                    <a class="a_hover" href="produto-cartao-de-visita.html" style="display:block;">
+                        <div class="div_caixa_produto" >
+                            <div class="panel_de_botoes_ocultos"><!--Div de flutuação do botão oculto-->
+                                <div class="botoes_ocultos"><!--Botões ocultos-->
+                                    <button type="button" class="btn btn-lg botao_color_e47650">CONFIRA</button>
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="texto_produto">Cartão de Visita</h4>
+                                    <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.png" alt="Card image cap">
+                                    <h4 class="texto_produto">A partir de R$ 10,99</h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col" >
-                    <div class="card produtosHover" >
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h4 class="card-title">IMÃ DE GELADEIRA</h4>
-                                <img class="fotosProdutos" src="_imagens/produtos/ima.jpg" alt="Card image cap">
-                                <a href="#" class="btn btn-primary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col">
-                    <div class="card produtosHover" >
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h4 class="card-title">10 BLOCOS 2V</h4>
-                                <img class="fotosProdutos" src="_imagens/produtos/bloco.jpg" alt="Card image cap">
-                                <a href="#" class="btn btn-primary">Veja mais</a>
+                    <a class="a_hover" href="produto-cartao-de-visita.html" style="display:block;">
+                        <div class="div_caixa_produto" >
+                            <div class="panel_de_botoes_ocultos"><!--Div de flutuação do botão oculto-->
+                                <div class="botoes_ocultos"><!--Botões ocultos-->
+                                    <button type="button" class="btn btn-lg botao_color_e47650">CONFIRA</button>
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="texto_produto">Cartão de Visita</h4>
+                                    <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.png" alt="Card image cap">
+                                    <h4 class="texto_produto">A partir de R$ 10,99</h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
+                <div class="col">
+                    <a class="a_hover" href="produto-cartao-de-visita.html" style="display:block;">
+                        <div class="div_caixa_produto" >
+                            <div class="panel_de_botoes_ocultos"><!--Div de flutuação do botão oculto-->
+                                <div class="botoes_ocultos"><!--Botões ocultos-->
+                                    <button type="button" class="btn btn-lg botao_color_e47650">CONFIRA</button>
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="texto_produto">Cartão de Visita</h4>
+                                    <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.png" alt="Card image cap">
+                                    <h4 class="texto_produto">A partir de R$ 10,99</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="row justify-content-md-center" style="padding-top: 20px;">
+                <div class="col">
+                    <a class="a_hover" href="produto-cartao-de-visita.html" style="display:block;">
+                        <div class="div_caixa_produto" >
+                            <div class="panel_de_botoes_ocultos"><!--Div de flutuação do botão oculto-->
+                                <div class="botoes_ocultos"><!--Botões ocultos-->
+                                    <button type="button" class="btn btn-lg botao_color_e47650">CONFIRA</button>
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="texto_produto">Cartão de Visita</h4>
+                                    <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.png" alt="Card image cap">
+                                    <h4 class="texto_produto">A partir de R$ 10,99</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="a_hover" href="produto-cartao-de-visita.html" style="display:block;">
+                        <div class="div_caixa_produto" >
+                            <div class="panel_de_botoes_ocultos"><!--Div de flutuação do botão oculto-->
+                                <div class="botoes_ocultos"><!--Botões ocultos-->
+                                    <button type="button" class="btn btn-lg botao_color_e47650">CONFIRA</button>
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="texto_produto">Cartão de Visita</h4>
+                                    <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.png" alt="Card image cap">
+                                    <h4 class="texto_produto">A partir de R$ 10,99</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="a_hover" href="produto-cartao-de-visita.html" style="display:block;">
+                        <div class="div_caixa_produto" >
+                            <div class="panel_de_botoes_ocultos"><!--Div de flutuação do botão oculto-->
+                                <div class="botoes_ocultos"><!--Botões ocultos-->
+                                    <button type="button" class="btn btn-lg botao_color_e47650">CONFIRA</button>
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="texto_produto">Cartão de Visita</h4>
+                                    <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.png" alt="Card image cap">
+                                    <h4 class="texto_produto">A partir de R$ 10,99</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="a_hover" href="produto-cartao-de-visita.html" style="display:block;">
+                        <div class="div_caixa_produto" >
+                            <div style="position:relative;"><!--Div de flutuação do botão oculto-->
+                                <div class="botoes_ocultos"><!--Botões ocultos-->
+                                    <button type="button" class="btn btn-lg botao_color_e47650">CONFIRA</button>
+                                </div>
+                                <div class="text-center">
+                                    <h4 class="texto_produto">Cartão de Visita</h4>
+                                    <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.png" alt="Card image cap">
+                                    <h4 class="texto_produto">A partir de R$ 10,99</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <h2 class="text-center" style="margin-top: 40px; margin-bottom: 40px; font-weight: bold;">MILHADES DE CLIENTES CONFIAM NA PROMOIMPRESSO</h2>
+
+            <div class="row justify-content-md-center" style="padding-bottom: 40px;">
+                <ul id="clientes_links">
+                    <li>
+                        <a href="https://www.facebook.com/promoimpresso/" target="_blank">
+                            <img src="_imagens/_clientes/HarleyDavidsonlogo.png" alt="Facebook"/></a>
+                    </li>
+                    <li>
+                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/bosch_logo.png" alt="Linkedin"/></a>
+                    </li>
+                    <li>
+                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/chick-fish-logo.png" alt="Linkedin"/></a>
+                    </li>
+                    <li>
+                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/consigaz-logo.png" alt="Linkedin"/></a>
+                    </li>
+                    <li>
+                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/embracon-logo.png" alt="Linkedin"/></a>
+                    </li>
+                    <li>
+                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/eskimo-logo.png" alt="Linkedin"/></a>
+                    </li>
+                    <li>
+                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/fabricadechocolate-logo.png" alt="Linkedin"/></a>
+                    </li>
+                    <li>
+                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/fabricailusoes-logo.png" alt="Linkedin"/></a>
+                    </li>
+                    <li>
+                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/mazusushibar-logo.png" alt="Linkedin"/></a>
+                    </li>
+                    <li>
+                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/portoseguro-logo.png" alt="Linkedin"/></a>
+                    </li>
+                    <li>
+                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/userede-logo.png" alt="Linkedin"/></a>
+                    </li>
+                    <li>
+                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/zummrevista-logo.png" alt="Linkedin"/></a>
+                    </li>
+                </ul>
             </div>
         </div>
 
-        <div class="container produtos">
-            <div class="row justify-content-md-center">
-                <div class="col">
-                    <div class="card produtosHover" >
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h4 >CARTÃO DE VISITA</h4>
-                                <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.jpg" alt="Card image cap">
-                                <a href="produto-cartao-de-visita.html" class="btn btn-primary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card produtosHover" >
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h4 >CARTÃO DE VISITA</h4>
-                                <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.jpg" alt="Card image cap">
-                                <a href="produto-cartao-de-visita.html" class="btn btn-primary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card produtosHover" >
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h4 >CARTÃO DE VISITA</h4>
-                                <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.jpg" alt="Card image cap">
-                                <a href="produto-cartao-de-visita.html" class="btn btn-primary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col" >
-                    <div class="card produtosHover" >
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h4 class="card-title">IMÃ DE GELADEIRA</h4>
-                                <img class="fotosProdutos" src="_imagens/produtos/ima.jpg" alt="Card image cap">
-                                <a href="#" class="btn btn-primary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card produtosHover" >
-                        <div class="card text-center">
-                            <div class="card-body">
-                                <h4 class="card-title">10 BLOCOS 2V</h4>
-                                <img class="fotosProdutos" src="_imagens/produtos/bloco.jpg" alt="Card image cap">
-                                <a href="#" class="btn btn-primary">Veja mais</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!--FOOTER////////////////////////////////////////////////////////-->
-    <iframe src="modelos/footer.html" name="janela" id="frame-footer" 
-            frameBorder="0" scrolling="no" ></iframe>
+        <!--FOOTER////////////////////////////////////////////////////////-->
+        <?php
+        $footer = "index";
+        include"./modelos/footer.php";
+        ?>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="_javascript/jquery-3.2.1.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"  crossorigin="anonymous"></script>
-    <script src="bootstrap-4.0.0-beta/js/bootstrap.js" type="text/javascript"></script>
-</body>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="_javascript/jquery-3.2.1.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"  crossorigin="anonymous"></script>
+        <script src="bootstrap-4.0.0-beta/js/bootstrap.js" type="text/javascript"></script>
+    </body>
 </html>

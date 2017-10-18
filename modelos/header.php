@@ -1,3 +1,7 @@
+<?php
+include 'BDler.php';
+$grupo = retorna();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -35,10 +39,10 @@
                                          style="width: 16px; left: 0px; top: 0px;"/> </a>
                             </li>
                             <li style="border-left: 1px solid #231f20;"><a href="sobre-nos.html" target="_parent" style=" padding-left: 20px;
-                                   color: #231f20;"> Baixar gabaritos 
+                                                                           color: #231f20;"> Baixar gabaritos 
                                     <img id="icon_interrogacao" class="icon" 
-                                                          src="_imagens/icon/icon_report.png" alt="icon_interrogacao" 
-                                                          style="width: 16px; left: 0px; top: 0px;"/> </a>
+                                         src="_imagens/icon/icon_report.png" alt="icon_interrogacao" 
+                                         style="width: 16px; left: 0px; top: 0px;"/> </a>
                             </li>
                             <li style="border-left: 1px solid #231f20; padding-left: 20px; color: #27cbc0;">Olá
                                 <a href="#"> Entre</a> ou <a href="#" style="color: #27cbc0;">Cadastre-se</a>
@@ -70,6 +74,26 @@
                                     </button>
                                 </div>
                                 <div class="modal-body" style="height: 500px">
+                                    <table border="1">
+                                        <caption>Usuários no sistema</caption>
+                                        <tr style="background-color: #DCDCDC">
+                                            <td>Nome</td>
+                                            <td>E-mail</td>
+                                            <td>Endereço</td>
+                                            <td>Telefone</td>
+                                            <td>Telefone 2</td>
+                                            <td>Editar</td>
+                                            <td>Excluir</td>
+
+                                            <?php foreach ($grupo as $pessoa) { ?>
+
+                                            <tr>
+                                                <td><?= $pessoa['nome'] ?></td>
+                                            </tr>
+                                        <?php }
+                                        ?>
+                                        </tr>
+                                    </table>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

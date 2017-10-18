@@ -44,7 +44,7 @@ div#div_produtos_mais_vendidos .col{
     background-color: white;
     box-shadow: 5px 5px 5px #A9A9A9;
     color: black;
-    
+
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -54,7 +54,7 @@ div#div_produtos_mais_vendidos .col{
 .a_hover:hover{/*caixa de exibição do produto HOVER*/
     text-decoration: none;
 }
-                   
+
 .texto_produto{
     padding-top: 10px;
     font-weight: bold;
@@ -96,7 +96,7 @@ ul#clientes_links {
     padding-left: 0px;
     padding-right: 0px;
     background-color: white;
-    
+
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -109,7 +109,10 @@ ul#clientes_links li{
 }
 
 ul#clientes_links li:hover{
-    background-color: #DCDCDC;
+    transform: scale(2);
+    transition: all .4s ease-in;
+    background-color: white;
+    box-shadow: 5px 5px 5px #A9A9A9;
 }
 
 ul#clientes_links img{

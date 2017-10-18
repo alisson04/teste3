@@ -244,58 +244,47 @@
                 </div>
             </div>
 
-            <h2 class="text-center" style="margin-top: 40px; margin-bottom: 40px; font-weight: bold;">MILHADES DE CLIENTES CONFIAM NA PROMOIMPRESSO</h2>
+            <!--CLIENTES/////////////////////////////////////////////////////-->
+            <h2 class="text-center" style="margin-top: 40px; margin-bottom: 40px; font-weight: bold;">
+                MILHADES DE CLIENTES CONFIAM NA PROMOIMPRESSO</h2>
 
             <div class="row justify-content-md-center" style="padding-bottom: 40px;">
                 <ul id="clientes_links">
-                    <li>
-                        <a href="https://www.facebook.com/promoimpresso/" target="_blank">
-                            <img src="_imagens/_clientes/HarleyDavidsonlogo.png" alt="Facebook"/></a>
-                    </li>
-                    <li>
-                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
-                            <img src="_imagens/_clientes/bosch_logo.png" alt="Linkedin"/></a>
-                    </li>
-                    <li>
-                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
-                            <img src="_imagens/_clientes/chick-fish-logo.png" alt="Linkedin"/></a>
-                    </li>
-                    <li>
-                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
-                            <img src="_imagens/_clientes/consigaz-logo.png" alt="Linkedin"/></a>
-                    </li>
-                    <li>
-                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
-                            <img src="_imagens/_clientes/embracon-logo.png" alt="Linkedin"/></a>
-                    </li>
-                    <li>
-                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
-                            <img src="_imagens/_clientes/eskimo-logo.png" alt="Linkedin"/></a>
-                    </li>
-                    <li>
-                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
-                            <img src="_imagens/_clientes/fabricadechocolate-logo.png" alt="Linkedin"/></a>
-                    </li>
-                    <li>
-                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
-                            <img src="_imagens/_clientes/fabricailusoes-logo.png" alt="Linkedin"/></a>
-                    </li>
-                    <li>
-                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
-                            <img src="_imagens/_clientes/mazusushibar-logo.png" alt="Linkedin"/></a>
-                    </li>
-                    <li>
-                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
-                            <img src="_imagens/_clientes/portoseguro-logo.png" alt="Linkedin"/></a>
-                    </li>
-                    <li>
-                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
-                            <img src="_imagens/_clientes/userede-logo.png" alt="Linkedin"/></a>
-                    </li>
-                    <li>
-                        <a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
-                            <img src="_imagens/_clientes/zummrevista-logo.png" alt="Linkedin"/></a>
-                    </li>
+                    <li><a href="https://www.facebook.com/promoimpresso/" target="_blank">
+                            <img src="_imagens/_clientes/HarleyDavidsonlogo.png" alt="Facebook"/></a></li>
+
+                    <li><a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/bosch_logo.png" alt="Linkedin"/></a></li>
+
+                    <li><a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/chick-fish-logo.png" alt="Linkedin"/></a></li>
+
+                    <li><a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/consigaz-logo.png" alt="Linkedin"/></a></li>
+
+                    <li><a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/embracon-logo.png" alt="Linkedin"/></a></li>
+
+                    <li><a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/eskimo-logo.png" alt="Linkedin"/></a></li>
+
+                    <li><a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/fabricadechocolate-logo.png" alt="Linkedin"/></a></li>
+
+                    <li><a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/fabricailusoes-logo.png" alt="Linkedin"/></a></li>
+
+                    <li><a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/mazusushibar-logo.png" alt="Linkedin"/></a></li>
+
+                    <li><a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/portoseguro-logo.png" alt="Linkedin"/></a></li>
+
+                    <li><a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/userede-logo.png" alt="Linkedin"/></a></li>
+
+                    <li><a href="https://br.linkedin.com/company/promoimpresso" target="_blank">
+                            <img src="_imagens/_clientes/zummrevista-logo.png" alt="Linkedin"/></a></li>
                 </ul>
             </div>
         </div>

@@ -1,12 +1,5 @@
 @charset "UTF-8";
 /*----------------------------------------------------------------------------*/
-footer#rodape img#icone{/*Imagem Logo*/
-    position: relative;
-    width: 400px;
-    height: 80px;
-    left: -10%;
-    top: -15%;
-}
 
 footer#rodape p{
     text-align: center;
@@ -17,10 +10,6 @@ footer#rodape p{
 /*SOCIAL LiNKS----------------------------------------------------------------*/
 ul#social_links {
     list-style: none;
-    padding-left: 0px;
-    padding-right: 0px;
-    width: 100px;
-    left: 220px;
 }
 
 ul#social_links li{
@@ -32,24 +21,13 @@ ul#social_links img{
     height: 36px;
 }
 
-/*NEWSLATTER------------------------------------------------------------------*/
-
-.botao_color_0a9b91{
-    background-color: #0a9b91;
-    color: white;
-}
-
-.botao_color_0a9b91:hover{
-    background-color: #0ab6aa;
-}
-
 /*FORMAS DE PAGAMENTO---------------------------------------------------------*/
 ul#formas_de_pagamento {
     list-style: none;
     padding-left: 0px;
     padding-right: 0px;
     background-color: white;
-    
+
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -63,4 +41,64 @@ ul#formas_de_pagamento li{
 
 ul#formas_de_pagamento img{
     height: 36px;
+}
+
+/*PRIMEIRO FOOTER-------------------------------------------------------------*/
+div#div_primeiro_footer{
+    background-color: #27cbc0;
+    height: 250px;
+    color: white;
+}
+
+div.space_top_primeiro_footer{
+    padding-top: 20px;
+}
+
+/*NEWSLATTER------------------------------------------------------------------*/
+.botao_color_0a9b91{
+    background-color: #0a9b91;
+    color: white;
+}
+
+.botao_color_0a9b91:hover{
+    background-color: #0ab6aa;
+}
+
+
+/*SEGUNDO FOOTER--------------------------------------------------------------*/
+div#div_segundo_footer{
+    height: 200px; 
+    background-color: #0a9b91;   
+    padding-top: 30px;
+    color: white;
+}
+
+
+div#div_segundo_footer img#icone{/*Imagem Logo*/
+    position: relative;
+    width: 30%;
+    left: 35%;
+    padding: 10px 10px;
+}
+
+ul.opcoes_footer {
+    list-style: none;
+    padding-left: 0px;
+    padding-right: 0px;
+    display: block;
+}
+
+ul.opcoes_footer a{ 
+    color: white;
+}
+
+/*TERCEIRO FOOTER------------------------------------------------------------*/
+div#div_terceiro_footer{
+    background-color: white;
+    height: 100px;
+    padding-top: 20px;
+}
+
+div#div_terceiro_footer P{
+    color: #77787b;
 }

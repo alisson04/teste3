@@ -1,5 +1,5 @@
 // Set the date we're counting down to
-var countDownDate = new Date("Oct 17, 2017 23:59:59").getTime();
+var countDownDate = new Date("Oct 18, 2017 23:59:59").getTime();
 // Update the count down every 1 second
 var x = setInterval(function () {
     // Get todays date and time
@@ -20,6 +20,7 @@ var x = setInterval(function () {
     // If the count down is finished, write some text 
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("demo").innerHTML = "EXPIROU";
+    }else{
+        document.getElementById("div_promocao").style.display = '';//Mostra a div de promoção
     }
 }, 1000);

@@ -70,7 +70,7 @@
         </div>
 
         <!--TIMER////////////////////////////////////////////////////////////-->
-        <div id="div_promocao" class="row no-gutters" style="font-family: 'Open Sans', sans-serif;">
+        <div id="div_promocao" class="row no-gutters" style="font-family: 'Open Sans', sans-serif; display: none;">
             <div class="col-2"></div>
             <!--descrição da promoção-->
             <div class="col-2 text-right" style="font-size: 17px; border-right: 1px solid black; padding-top: 5px; justify-content: center;">

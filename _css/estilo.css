@@ -14,10 +14,6 @@ div#div_timer{
 }
 
 div#div_timer p#timer_days, p#timer_hours, p#timer_mins, p#timer_secs{
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-bottom-left-radius: 5px;
     padding: 5px 5px;
     display:inline;
     background-color: #0a9b91;
@@ -26,21 +22,41 @@ div#div_timer p#timer_days, p#timer_hours, p#timer_mins, p#timer_secs{
 }
 
 /*PRODUTOS----------------------------------------------------*/
+div.paginatorProdutos a{
+   text-decoration: none;
+   color:#77787b;
+   font-weight: bold;
+   padding: 0px 15px;
+   border-bottom: 4px solid #77787b;
+}
+
+div.paginatorProdutos a:hover{
+   color:#27cbc0;
+   font-weight: bold;
+   border-bottom: 4px solid #27cbc0;
+}
+
+div.paginatorProdutos{
+    padding-bottom: 5px;
+}
+
+div.paginatorProdutos:hover{
+    text-transform: none;
+   text-decoration: none;
+    padding-bottom: 0px;
+}
+
 div#div_produtos_mais_vendidos{/*container de produtos*/
     margin-left: 10%; 
-    margin-right: 10%; 
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-right: 10%;
 }
 
 div#div_produtos_mais_vendidos .col{
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
 }
 
 .div_caixa_produto{/*caixa de exibição do produto*/
     height: 450px;
-    width: 100%;
     background-color: white;
     box-shadow: 5px 5px 5px #A9A9A9;
     color: black;
@@ -105,7 +121,7 @@ ul#clientes_links {
 
 ul#clientes_links li{
     display: inline-block;
-    padding: 21px 5px;
+    padding: 15px 5px;
 }
 
 ul#clientes_links li:hover{

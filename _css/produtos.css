@@ -3,9 +3,9 @@
 /*CORPO DA PAGINA----------------------------------------------------*/
 div#interface{
     background-color: white;
-    margin: 50px auto  50px auto;
-    padding: 10px;
-    height: 600px;
+    margin: 50px auto  0px auto;
+    box-shadow: 5px 5px 15px #002752;
+    padding: 20px 20px;
 }
 
 /*CORPO DO CAROUSEL DE PRODUTO----------------------------------------------------*/
@@ -39,18 +39,13 @@ aside#lateral h3{
 }
 
 /*CONFIGURAÇÃO PRODUTO----------------------------------------------------*/
-section#corpo_config_produto{
-    display: block;
-    width: 70%;
-    float: left;
-    padding-right: 20px;
+div#configProduto{
+    padding: 10px 10px;
+    box-shadow: 5px 5px 15px #002752;
+    margin-bottom: 20px;
 }
 
-aside#aside_config_produto{
-    display: block;
-    width: 30%;
-    float: right;
-    padding: 20px 20px 20px 20px;
-    border-left: 1px solid #606060;
-    padding-left: 15px;
+div.passosConfigProduto{
+    background-color: #FFFFFF; margin-bottom: 20px; padding: 10px 10px;
+                 border-bottom: 1px solid black;
 }

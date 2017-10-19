@@ -1,7 +1,3 @@
-<?php
-include 'BDler.php';
-$grupo = retorna();
-?>
 <!DOCTYPE html>
 <html>
     <head>

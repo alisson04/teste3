@@ -10,8 +10,6 @@ require_once '_dao/Usuario.php';
 
 class UserController {
 
-    private $usuarioDao;
-
     function __construct() {
         
     }

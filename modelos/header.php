@@ -50,46 +50,35 @@
             <div class="row no-gutters" style="height: 75px;">
                 <div class="col" style="width: 25%;">
                     <!--LOGO CABECALHO-->
-                    <img id="icone" src="_imagens/logo.png" alt="Logo"/>
+                    <a href="index.php">
+                        <img id="icone" src="_imagens/logo.png" alt="Logo"/>
+                    </a>
 
                     <!-- MODAL PRODUTOS-->
                     <a id="a_todos_os_produtos" href="#"  data-toggle="modal" data-target="#exampleModal" 
                        style="font-family: 'Open Sans', sans-serif;">
                         <img id="icone" class="icon" src="_imagens/icon/menu.png" alt="icon_menu" style="width: 16px;
-                             left: 0px; top: 0px;"/>
+                             left: 0px; top: -1px;"/>
                         Todos os produtos
                     </a>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" 
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                          aria-hidden="true" style="font-family: 'Courgette', cursive;">
                         <div class="modal-dialog" role="document" style="margin: 0px 0px 0px 0px;">
                             <div class="modal-content" style="background-color: white; width: 400px;" >
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel">Todos os produtos</h5>
+                                    <a href="produtos.php">PRODUTOS</a>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
                                 <div class="modal-body" style="height: 500px">
-                                    <table border="1">
-                                        <caption>Usuários no sistema</caption>
-                                        <tr style="background-color: #DCDCDC">
-                                            <td>Nome</td>
-                                            <td>E-mail</td>
-                                            <td>Endereço</td>
-                                            <td>Telefone</td>
-                                            <td>Telefone 2</td>
-                                            <td>Editar</td>
-                                            <td>Excluir</td>
-
-                                            <?php foreach ($grupo as $pessoa) { ?>
-
-                                            <tr>
-                                                <td><?= $pessoa['nome'] ?></td>
-                                            </tr>
+                                    <ul>
+                                        <?php foreach ($produtoController->findAllOrderByGenerico() as $key => $value) { ?>
+                                            <li><a href="#"><?php echo $value->nome; ?></a></li>
                                         <?php }
                                         ?>
-                                        </tr>
-                                    </table>
+                                    </ul>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -99,6 +88,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="col" style="width: 30%;">
                     <!--MENU PRINCIPAL-->
                     <nav id="menu" style="font-family: 'Open Sans', sans-serif;">﻿

@@ -5,12 +5,10 @@
  *
  * @author Plotter
  */
-
-require_once 'Usuario.php';
 require_once 'DaoGenerico.php';
 
-class UsuarioDao extends DaoGenerico {
-    protected $tabela = 'tbl_usuarios';
+class ProdutoDao extends DaoGenerico {
+    protected $tabela = 'tbl_produtos';
     
     public function findUnit($id){
         $sql = "SELECT * FROM $this->tabela WHERE id = :id";

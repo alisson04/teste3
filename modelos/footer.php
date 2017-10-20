@@ -25,13 +25,24 @@
                     <div class="container space_top_primeiro_footer">
                         <div class="row justify-content-md-center">
                             <div class="col-md-auto">
-                                <form method="post" id="fContato" style="display:inline-block;">
-                                    <p><label for="cEmail">E-mail:</label>
-                                        <input type="email" name="tEmail" id="cEmail" size="20" maxlength="40"/>
+                                <form method="post">
+                                    <?php
+                                    require_once './_dao/DaoGenerico.php';
+                                    $usuario = new DaoGenerico();
+
+                                    if (isset($_POST['cadastrarNewslatter'])):
+                                        $cliente = array(
+                                            'email' => $_POST['tEmailNewslatter']
+                                        );
+                                        $usuario->DBCreate('tbl_newsletter', $cliente);
+                                    endif;
+                                    ?>
+                                    <p style="display:inline-block;"><label for="cEmail">E-mail:</label>
+                                        <input type="email" name="tEmailNewslatter" id="cEmail" size="20" maxlength="40" required/>
                                     </p>
-                                </form>
-                                <button type="button" class="btn btn-lg botao_color_0a9b91" style="font-weight: bold;
-                                        display:inline-block; margin-left: 10px;">INSCREVER</button>
+                                    <button  name="cadastrarNewslatter" type="submit" class="btn btn-lg botao_color_0a9b91" 
+                                             style="font-weight: bold; display:inline-block; margin-left: 10px;">INSCREVER</button>
+                                </form>                                
                             </div>
                         </div>  
                     </div>
@@ -93,7 +104,7 @@
             <div id="div_terceiro_footer">
                 <div class="row no-gutters">
                     <!--FORMAS DE PAGAMENTO-->
-                    <div class="col" style="position:relative;">
+                    <div class="col-4" style="position:relative;">
                         <p>FORMAS DE PAGAMENTO</p>
                         <div class="row justify-content-md-center">
                             <ul id="formas_de_pagamento">
@@ -106,7 +117,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col" style="position:relative;">
+                    <div class="col-4" style="position:relative;">
                         <p>CERTIFICADOS</p>
                         <div class="row justify-content-md-center">
                             <ul id="formas_de_pagamento">
@@ -115,9 +126,15 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col">
-                        <p>CNPJ:</p>
+                    <div class="col-2 ">
+                        <p class="text-center">CNPJ:</p>
                     </div>
+                    <div class="col-2 ">
+                        <div class="row no-gutters justify-content-md-center">
+                            <a href="#top" class="text-center" style="text-decoration: none; color: #77787b" >
+                                <img src="_imagens/icon/arrowUp.png" alt="SetaTopoPagina" style="width: 30px;"><br/>Topo</a>
+                        </div>
+                    </div>                    
                 </div>
             </div>
             <div style="background-color: #ebebeb; height: 30px;">

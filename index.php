@@ -33,15 +33,13 @@ $produtoController = new PodutoController();
 
     <body style="font-family: 'Share Tech Mono', monospace; margin: 0px 0px 0px 0px; background-color: #D3D3D3;">
         <!--HEADER///////////////////////////////////////////////////////////-->
-        <div style="position: fixed; top: 0%; width: 100%; z-index: 10;">
-            <?php
-            $pagina = "index";
-            include"./modelos/header.php";
-            ?>
-        </div>
+        <?php
+        $pagina = "index";
+        include"./modelos/header.php";
+        ?>
 
         <!--CAROUSEL////////////////////////////////////////////////////////-->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="margin-top: 100px;">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="d-block w-100" src="_imagens/banner/modeloBanner.jpg" alt="First slide">

@@ -24,9 +24,6 @@ endif;
 
         <!--JAVASCRIPT-->
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-beta/css/bootstrap.css" >
-
         <!--Fontes Gogle-->
     </head>
 
@@ -95,11 +92,5 @@ endif;
         $footer = "index";
         include"./modelos/footer.php";
         ?>
-
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="_javascript/jquery-3.2.1.js" type="text/javascript"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"  crossorigin="anonymous"></script>
-        <script src="bootstrap-4.0.0-beta/js/bootstrap.js" type="text/javascript"></script>
     </body>
 </html>

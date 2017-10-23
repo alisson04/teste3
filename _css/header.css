@@ -1,11 +1,30 @@
 @charset "UTF-8";
+/*HEADER CABEÇALHO------------------------------------------------------------*/
+header#cabecalho{
+    border-bottom: 1px #606060 solid;
+    background-color: #FFFFFF;
+    
+    position: fixed; z-index: 1050;
+    width: 100%; 
+    /*background: url("../_imagens/logo.png") no-repeat 0px 100px;*/
+}
 
+/*ICONE CABEÇALHO-------------------------------------------------------------*/
+header#cabecalho img#icone{
+    position: relative;
+    left: 30%;
+    top: 0px;
+    width: 12%;
+}
+
+/*TOPO CABEÇALHO---------------------------------------------------------------*/
 div#div_topo_cabecalho{
     height: 25px; 
     background-color: #ebebeb;
     font-weight: bold;
     font-size: 15px;
     color: #231f20;
+    z-index: 1050;
 }
 
 div#div_topo_cabecalho ul{
@@ -14,6 +33,13 @@ div#div_topo_cabecalho ul{
     top: 0px;
 }
 
+/*CABECALHO-------------------------------------------------------------------*/
+div#div_cabecalho{
+    height: 75px; 
+    background-color: white;
+}
+
+/*MENU------------------------------------------------------------------------*/
 nav#menuT{
     display: block;
 }
@@ -27,21 +53,6 @@ nav#menuT a{
     color: #231f20;
 }
 
-/*HEADER CABEÇALHO------------------------------------------------------------*/
-header#cabecalho{
-    border-bottom: 1px #606060 solid;
-    height: 100px;
-    background-color: #FFFFFF;
-    /*background: url("../_imagens/logo.png") no-repeat 0px 100px;*/
-}
-
-/*ICONE CABEÇALHO-------------------------------------------------------------*/
-header#cabecalho img#icone{
-    position: relative;
-    left: 30%;
-    top: 0px;
-    width: 12%;
-}
 /*BOTÃO TODOS OS PRODUTOS-----------------------------------------------------*/
 a#a_todos_os_produtos{
     color: black; 

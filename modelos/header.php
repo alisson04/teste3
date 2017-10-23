@@ -11,16 +11,13 @@
         <!--fonte Google-->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <!--JAVASCRIPT-->
-        <script language="javascript" src="_javascript/funcoes.js" ></script>
-
-        <!--window.closeModal = function () {$('#exampleModal').modal('show');};
-        <a href="#" onclick="closeModal();" style="padding-top:10px;" target="_parent">Obah posso comentar</a>-->
+        <script language="javascript" src="_javascript/header.js" ></script>
     </head>
 
     <body style="margin: 0px 0px 0px 0px;">
         <header id="cabecalho" style="font-family: 'Open Sans', sans-serif; ">
             <!--TOPO DO CABEÇALHO-->
-            <div id="div_topo_cabecalho" class="row no-gutters">
+            <div id="div_topo_cabecalho" class="row no-gutters" style="z-index: 1050;">
                 <!--MENU PRINCIPAL-->
                 <div class="col-6">
                 </div>
@@ -28,7 +25,7 @@
                     <nav id="menuT" style="font-family: 'Open Sans', sans-serif;">﻿
                         <ul>
                             <li id="">
-                                <a href="produto-cartao-de-visita.html" target="_parent"
+                                <a href="#" target="_parent" onclick="src()"
                                    style=" text-align: right;">Central de ajuda
                                     <img id="icon_interrogacao" class="icon" 
                                          src="_imagens/icon/icon_interrogacao.png" alt="icon_interrogacao" 
@@ -47,7 +44,7 @@
                     </nav>
                 </div>
             </div>
-            <div class="row no-gutters" style="height: 75px;">
+            <div id="div_cabecalho" class="row no-gutters">
                 <div class="col" style="width: 25%;">
                     <!--LOGO CABECALHO-->
                     <a href="index.php">
@@ -88,13 +85,13 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="col" style="width: 30%;">
                     <!--MENU PRINCIPAL-->
                     <nav id="menu" style="font-family: 'Open Sans', sans-serif;">﻿
                         <h1>Menu Principal</h1>
                         <ul>
-                            <li><a href="index.php" target="_parent">Orçamento <br/> Personalisado</a></li>
+                            <li><a href="#" target="_parent" onclick="src()">Orçamento <br/> Personalisado</a></li>
                             <li><a href="sobre-nos.html" target="_parent">Seja um <br/> Afiliado</a></li>
                         </ul>
                     </nav>

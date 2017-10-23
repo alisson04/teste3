@@ -3,9 +3,9 @@
 header#cabecalho{
     border-bottom: 1px #606060 solid;
     background-color: #FFFFFF;
-    
-    position: fixed; z-index: 1050;
-    width: 100%; 
+    position: fixed; 
+    z-index: 1050;
+    width: 100%;
     /*background: url("../_imagens/logo.png") no-repeat 0px 100px;*/
 }
 

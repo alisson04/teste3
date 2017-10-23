@@ -1,9 +1,3 @@
-<?php
-//Novo Produto
-include '_controller/ProdutoController.php';
-$produtoController = new PodutoController();
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,15 +25,15 @@ $produtoController = new PodutoController();
         <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet"><!--Modal produtos-->
     </head>
 
-    <body style="font-family: 'Share Tech Mono', monospace; margin: 0px 0px 0px 0px; background-color: #D3D3D3;">
+    <body style="font-family: 'Share Tech Mono', monospace; background-color: #D3D3D3;">
         <!--HEADER///////////////////////////////////////////////////////////-->
         <?php
-        $pagina = "index";
+        include './_model/Categoria.php';
         include"./modelos/header.php";
         ?>
 
         <!--CAROUSEL////////////////////////////////////////////////////////-->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"   >
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img class="d-block w-100" src="_imagens/banner/modeloBanner.jpg" alt="First slide">

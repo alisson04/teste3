@@ -8,7 +8,7 @@
 require_once 'DB.php';
 
 class DaoGenerico {
-    
+
     //Buscar tudo
     public static function findAllGenerico($tabela) {
         $sql = "SELECT * FROM $tabela";
@@ -16,10 +16,20 @@ class DaoGenerico {
         $stm->execute();
         return $stm->fetchAll();
     }
-    
+
     //Buscar tudo Ordenado
     public static function findAllOrderByGenerico($tabela, $field) {
         $sql = "SELECT * FROM $tabela ORDER BY $field";
+        $stm = DB::prepare($sql);
+        $stm->execute();
+        return $stm->fetchAll();
+    }
+
+    //Buscar por ID
+    public static function findByWhereGenerico($tabela, $where = null, $fields = '*') {
+        $where = ($where) ? "WHERE $where" : null;
+
+        $sql = "SELECT $fields FROM $tabela $where";
         $stm = DB::prepare($sql);
         $stm->execute();
         return $stm->fetchAll();
@@ -35,4 +45,5 @@ class DaoGenerico {
 
         return $stm->execute();
     }
+
 }

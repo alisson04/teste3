@@ -1,5 +1,6 @@
 <?php
 include '_controller/ProdutoController.php';
+include './_model/Categoria.php';
 $produtoController = new PodutoController();
 
 if (isset($_POST['cadastrar'])):
@@ -8,6 +9,12 @@ if (isset($_POST['cadastrar'])):
         'cor' => $_POST['tCor'],
         'papel' => $_POST['tPapel']);
     $produtoController->insert($produto);
+endif;
+
+if (isset($_POST['cadastrarCategoria'])):
+    $cat = new Categoria();
+    $cat->setNome($_POST['tNomeCategoria']);
+    $cat->insert();
 endif;
 ?>
 <!DOCTYPE html>
@@ -24,6 +31,9 @@ endif;
 
         <!--JAVASCRIPT-->
 
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-beta/css/bootstrap.css" >
+
         <!--Fontes Gogle-->
     </head>
 
@@ -33,8 +43,19 @@ endif;
         $pagina = "index";
         include"./modelos/header.php";
         ?>
-        <div id="divCrudProdutos" class="container">
-            <form method = "post" id = "fContato" >
+        <div id="divCrudProdutos" class="container" style="padding: 10px 10px;">
+            <form method = "post" id = "fCategoria" style="border: 1px solid black; padding: 10px 10px;" >
+                <fieldset id = "categoria" >
+                    <legend>Cadastro de Categorias</legend>
+                    <p><label for = "cNomeCategoria">Nome:</label>
+                        <input type = "text" name = "tNomeCategoria" id = "cNomeCategoria" size="50" maxlength = "50" 
+                               placeholder = "Nome da categoria" required/>
+                    </p>
+                    <input name="cadastrarCategoria" type="submit" value="Cadastrar">
+                </fieldset>
+            </form>
+
+            <form class="was-validated" method = "post" id = "fContato" style="border: 1px solid black; padding: 10px 10px;" >
                 <fieldset id = "usuario" style="margin-bottom: 50px; " >
                     <legend>Cadastro de produtos</legend>
                     <p><label for = "cNome">Nome:</label>
@@ -43,9 +64,9 @@ endif;
                     <p><label for = "tTamanho">Tamanho:</label>
                         <select class="custom-select" id="tTamanho" name="tTamanho" required>
                             <option  value="">Selecione o tamanho</option>
-                                <option value="0,30 X 0,50">0,30 X 0,50</option>
-                                <option value="0,40 X 0,60">0,40 X 0,60</option>
-                                <option value="0,70 X 1,00">0,70 X 1,00</option>
+                            <option value="0,30 X 0,50">0,30 X 0,50</option>
+                            <option value="0,40 X 0,60">0,40 X 0,60</option>
+                            <option value="0,70 X 1,00">0,70 X 1,00</option>
                         </select>
                     </p>
                     <p><label for = "tCor">Cor:</label>
@@ -92,5 +113,11 @@ endif;
         $footer = "index";
         include"./modelos/footer.php";
         ?>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="_javascript/jquery-3.2.1.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"  crossorigin="anonymous"></script>
+        <script src="bootstrap-4.0.0-beta/js/bootstrap.js" type="text/javascript"></script>
     </body>
 </html>

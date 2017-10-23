@@ -22,7 +22,7 @@
     <body style="font-family: 'Share Tech Mono', monospace; margin: 0px 0px 0px 0px;">
         <!--HEADER///////////////////////////////////////////////////////////-->
         <?php
-        $pagina = "index";
+        include './_model/Categoria.php';
         include"./modelos/header.php";
         ?>
 
@@ -75,7 +75,7 @@
                         </div>
                     </div>
 
-                    <a style="font-size: 25px; padding-left: 15px;" href="#" class="btn btn-primary">Configurar</a>
+                    <a style="font-size: 25px; padding-left: 15px;" href="#" class="btn btn-primary">Compre aqui</a>
 
                     <p>O Google enfim revelou as especificações completas do Google 
                         Glass, e com ele uma surpresa ainda inédita no mercado: a </p>
@@ -84,6 +84,14 @@
 
             <!--CONFIGURAÇÃO PRODUTO/////////////////////////////////////////////-->
             <h1>Configure seu produto</h1>
+            
+            <div class="row no-gutters passosConfigProduto">
+                <form method="post">
+                    <fieldset><legend>Quantidade</legend>
+                        <input type="number" name="tQuantidade" min="120"  id="cQuantidade1"/><label for="cQuantidade" ></label>
+                    </fieldset>
+                </form>
+            </div>
             <div class="row no-gutters passosConfigProduto">
                 <form method="post">
                     <fieldset><legend>Envie sua arte ou contrate a criação:</legend>

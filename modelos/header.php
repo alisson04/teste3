@@ -19,34 +19,34 @@ $categoria = new Categoria();
     <body>
         <header id="cabecalho" style="font-family: 'Open Sans', sans-serif;">
             <!--TOPO DO CABEÇALHO-->
-            <div id="div_topo_cabecalho" class="row no-gutters" >
+            <div id="div_topo_cabecalho" class="container-fluid" >
                 <!--MENU PRINCIPAL-->
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xg-6">
-                </div>
-                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xg-6">
-                    <nav id="menuT" style="font-family: 'Open Sans', sans-serif;">﻿
-                        <ul>
-                            <li id="">
-                                <a href="#" target="_parent" style=" text-align: right;">Central de ajuda
-                                    <img id="icon_interrogacao" class="icon" 
-                                         src="_imagens/icon/icon_interrogacao.png" alt="icon_interrogacao" 
-                                         style="width: 16px; left: 0px; top: 0px;"/> </a>
-                            </li>
-                            <li style="border-left: 1px solid #231f20;"><a href="sobre-nos.html" target="_parent" style=" padding-left: 20px;
-                                                                           color: #231f20;"> Baixar gabaritos 
-                                    <img id="icon_interrogacao" class="icon" 
-                                         src="_imagens/icon/icon_report.png" alt="icon_interrogacao" 
-                                         style="width: 16px; left: 0px; top: 0px;"/> </a>
-                            </li>
-                            <li style="border-left: 1px solid #231f20; padding-left: 20px; color: #27cbc0;">Olá
-                                <a href="#"> Entre</a> ou <a href="#" style="color: #27cbc0;">Cadastre-se</a>
-                            </li>
-                        </ul>
-                    </nav>
+                <!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xg-6">-->
+                <div class="row justify-content-end" style="height: 25px; ">
+                    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xg-1">
+                        <p class="text-center">
+                            <a href="#" target="_parent" class="text-center">Central de ajuda
+                                <img id="icon_interrogacao" class="iconTopoCabecalho" src="_imagens/icon/icon_interrogacao.png" 
+                                     alt="icon_interrogacao"/> </a></p>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xg-1" style="border-left: 1px solid #231f20; border-right: 1px solid #231f20;">
+                        <p class="text-center">
+                            <a href="#" target="_parent"> Baixar gabaritos 
+                                <img id="icon_interrogacao" class="iconTopoCabecalho" src="_imagens/icon/icon_report.png" alt="icon_interrogacao"/>
+                            </a></p>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xg-1">
+                        <p class="text-center">
+                            Olá <a href="#" style="color: #27cbc0;">Entre</a> ou <a href="#" style="color: #27cbc0;">Cadastre-se</a>
+                        </p>
+
+                    </div>
                 </div>
             </div>
+            <!--CABEÇALHO-->
             <div id="div_cabecalho" class="row no-gutters">
-                <div class="col" style="width: 25%;">
+                <!--LOGO E BOTÃO-->
+                <div class="col-md-4">
                     <!--LOGO CABECALHO-->
                     <a href="index.php">
                         <img id="icone" src="_imagens/logo.png" alt="Logo"/>
@@ -82,23 +82,27 @@ $categoria = new Categoria();
                     </div>
                 </div>
 
-                <div class="col" style="width: 30%;">
-                    <!--MENU PRINCIPAL-->
-                    <nav id="menu" style="font-family: 'Open Sans', sans-serif;">﻿
+                <!--MENU PRINCIPAL-->
+                <div class="col-md-6"
+                     <!--MENU PRINCIPAL-->
+                     <nav id="menu" style="font-family: 'Open Sans', sans-serif;">﻿
                         <h1>Menu Principal</h1>
                         <ul>
-                            <li><a href="#" target="_parent" onclick="src()">Orçamento <br/> Personalisado</a></li>
-                            <li><a href="sobre-nos.html" target="_parent">Seja um <br/> Afiliado</a></li>
+                            <li><a href="#" target="_parent">Orçamento <br/> Personalisado</a></li>
+                            <li><a href="#" target="_parent">Seja um <br/> Afiliado</a></li>
+                            <li><a href="#" target="_parent">Pesquisa de <br/> Satisfação</a></li>
                         </ul>
                     </nav>
                 </div>
-                <div class="col" style="width: 45%;"><!--Carrinhod de compras-->
-                    <img id="icon_carrinho_de_compras" class="icon" src="_imagens/icon/carrinho_de_compras.jpg" 
-                         alt="icon_menu" />
+                <!--CARRINHO DE COMPRAS-->
+                <div class="col-md-2"><!--Carrinhod de compras-->
+                    <img id="icon_carrinho_de_compras" class="icon" src="_imagens/icon/carrinho_de_compras.png" 
+                         onMouseOver="this.src = '_imagens/icon/carrinho_de_comprasVerde.png'"
+                         onMouseOut="this.src = '_imagens/icon/carrinho_de_compras.png'" alt="icon_menu" />
                 </div>
             </div>
         </header>
 
-        <div style="height: 100px;"></div>
+        <div style="height: 100px;"></div><!--Importante para utilização do cabeçalho fixo-->
     </body>
 </html>

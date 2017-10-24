@@ -91,15 +91,6 @@ img.fotosProdutos{/*tamanho das imagens dos produtos*/
     display:block; //Exibe os botões somente com o hover
 }
 
-.botao_color_e47650{
-    background-color: #e47650;
-    color: white;
-}
-
-.botao_color_e47650:hover{
-    background-color: #ea5b2b;
-}
-
 /*CLIENTEDES LINKS------------------------------------------------------------*/
 ul#clientes_links {
     list-style: none;

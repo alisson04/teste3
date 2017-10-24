@@ -27,9 +27,9 @@ div#div_topo_cabecalho{
     z-index: 1050;
 }
 
-div#div_topo_cabecalho ul{
-    list-style: none;
-    position: absolute;
+img.iconTopoCabecalho{
+    width: 16px;
+    left: 0px;
     top: 0px;
 }
 
@@ -83,7 +83,7 @@ nav#menu ul{
 
 nav#menu li{
     display: inline-block;
-    padding: 10px;
+    padding: 10px 40px;
     margin-right: 20px;
 }
 
@@ -104,7 +104,11 @@ nav#menu a:hover{
 
 img#icon_carrinho_de_compras{
     width: 64px; 
-    margin-left: 40%;
+}
+
+img#icon_carrinho_de_compras:hover{
+    width: 64px;
+    
 }
 
 img#icon_carrinho_de_compras:hover{

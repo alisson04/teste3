@@ -19,12 +19,21 @@
         <link href="https://fonts.googleapis.com/css?family=Pragati+Narrow" rel="stylesheet"><!--Texto do produto-->
     </head>
 
+    <script>
+        function calc_total() {
+            var qtd = parseFloat(document.getElementById('cQuantidade1').value);
+            tot = qtd * 0.3;
+            tot = parseFloat(tot.toFixed(3));
+            document.getElementById('cTot').value = tot;
+        }
+    </script>
+
     <body style="font-family: 'Share Tech Mono', monospace; margin: 0px 0px 0px 0px;">
         <!--HEADER///////////////////////////////////////////////////////////-->
-        <?php
-        include './_model/Categoria.php';
-        include"./modelos/header.php";
-        ?>
+<?php
+include './_model/Categoria.php';
+include"./modelos/header.php";
+?>
 
         <div id="interface" class="container">
             <!--SLIDE PRODUTO////////////////////////////////////////////////-->
@@ -84,11 +93,19 @@
 
             <!--CONFIGURAÇÃO PRODUTO/////////////////////////////////////////////-->
             <h1>Configure seu produto</h1>
-            
+
             <div class="row no-gutters passosConfigProduto">
-                <form method="post">
+                <form method="post" oninput="calc_total();">
                     <fieldset><legend>Quantidade</legend>
-                        <input type="number" name="tQuantidade" min="120"  id="cQuantidade1"/><label for="cQuantidade" ></label>
+                        <input id="cQuantidade1" type="number" name="tQuantidade" min="1" max="999999" value="1"/>
+                        <label for="cQuantidade" ></label>
+
+                        <p><label for="cTot">Preço Total:</label>
+                            <input type="text" name="tTot" id="cTot" placeholder="Total a pagar" readonly/>
+                        </p>
+
+                        <input type="Text" name="operando1" value="" size="12" onKeyUp="maskIt(this, event, '###.###.###,##', true)" dir="rtl"> 
+                        <br/> 
                     </fieldset>
                 </form>
             </div>
@@ -151,10 +168,10 @@
         </div>
 
         <!--FOOTER////////////////////////////////////////////////////////-->
-        <?php
-        $footer = "index";
-        include"./modelos/footer.php";
-        ?>
+<?php
+$footer = "index";
+include"./modelos/footer.php";
+?>
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

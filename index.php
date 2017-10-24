@@ -9,6 +9,7 @@
 
         <!--CSS-->
         <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
+        <link rel="stylesheet" type="text/css" href="_css/genericos/btns.css"/>
         <link rel="stylesheet" type="text/css" href="_css/header_footer.css"/>
 
         <!--JAVASCRIPT-->

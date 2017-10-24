@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+.botao_color_e47650{
+    background-color: #e47650;
+    color: white;
+}
+
+.botao_color_e47650:hover{
+    background-color: #ea5b2b;
+}

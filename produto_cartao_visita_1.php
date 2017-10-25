@@ -31,16 +31,16 @@
 
         //PAGINATOR PRODUTOS------------------------------------------------------------
         function mudaEstilo(controle) {
-            var imgCartao0 = document.getElementById("imgCartao0");
-            var imgCartao1 = document.getElementById("imgCartao1");
-            var imgCartao2 = document.getElementById("imgCartao2");
-            var imgCartao3 = document.getElementById("imgCartao3");
+            var imgCartao0 = document.getElementById("corCaneca0");
+            var imgCartao1 = document.getElementById("corCaneca1");
+            var imgCartao2 = document.getElementById("corCaneca2");
+            var imgCartao3 = document.getElementById("corCaneca3");
 
             if (controle === 1) {
-                imgCartao0.style.border = "1px solid #27cbc0";
-                imgCartao1.style.border = "none";
-                imgCartao2.style.border = "none";
-                imgCartao3.style.border = "none";
+                imgCartao0.style.display = "";
+                imgCartao0.style.display = "none";
+                imgCartao0.style.display = "none";
+                imgCartao0.style.display = "none";
             } else if (controle === 2) {
                 imgCartao0.style.border = "none";
                 imgCartao1.style.border = "1px solid #27cbc0";
@@ -110,32 +110,81 @@
 
             <!--TEXTO PRODUTO////////////////////////////////////////////////-->
             <div class="col-4"  id="lateral" style="font-family: 'Pragati Narrow', sans-serif; padding: 20px;">
-                <div class="row justify-content-md-center">
+                <!--nome-->
+                <div class="row justify-content-md-center" style="margin-top: 20px;">
                     <h1 id="nome_produto" style="font-weight: bold;">CANECA DE PORCELANA</h1>
                 </div>
-                <div class="row text-center">
+                <!--slogan-->
+                <div class="row" style="margin-top: 20px;">
                     <h4 id="slogan_produto" style="color: #808285;">PERSONALIZE AQUI</h4>
+                </div>
+                <!--tipo-->
+                <div class="row justify-content-md-center" style="margin-top: 20px;">
+                    <div class="col-md-auto">
+                        <button type="button" class="btn">Contratar criação</button>
+                    </div>
+                    <div class="col-md-auto">
+                        <button type="button" class="btn">Anexar arquivo</button>
+                    </div>
+                </div>
+                <script>
+                    /*function somar() {
+                     $valor = parseInt(document.getElementById("cQuantidade").value);
+                     document.getElementById("cQuantidade").value = $valor + 1;
+                     }
+                     
+                     function sub() {
+                     $valor = parseInt(document.getElementById("cQuantidade").value);
+                     if ($valor <= 1) {
+                     document.getElementById("cQuantidade").value = $valor;
+                     } else {
+                     document.getElementById("cQuantidade").value = $valor - 1;
+                     }
+                     }*/
 
-                </div>
-                <div class="row justify-content-md-center">
-                    <input type="color" value="">
-                </div>
-                <div class="row justify-content-md-center" >
-                    <div class="col" style="background-color: red;">
-                        <a href="#"><div style="height: 20px;"></div></a>
+                     function quanti(){
+                         $valor = document.getElementById("cQuantidade").value;
+                         document.getElementById("cQuanti").value = "/ " + $valor + " Unidades";
+                     }
+                </script>
+                <style>
+                    /*input[type=number]::-webkit-inner-spin-button, 
+                    input[type=number]::-webkit-outer-spin-button { 
+                        -webkit-appearance: none; 
+                    }*/
+                </style>
+                <!--quantidade-->
+                <div class="row" style="margin-top: 40px;">
+                    <div class="col-md-auto">
+                        <input type="number" name="tQuantidade" id="cQuantidade" size="5" maxlength="5" value="" min="1" required  onclick="quanti()"/>
                     </div>
-                    <div class="col" style="background-color: white;">
-                        <a href="#"><div style="height: 20px;"></div></a>
-                    </div><div class="col" style="background-color: black;">
-                        <a href="#"><div style="height: 20px;"></div></a>
+                    <div class="col-md-auto">
+                        <input style="border: none;" type="text" name="tQuanti" id="cQuanti"  value="" readonly/>
                     </div>
-                    <div class="col" style="background-color: green;">
-                        <a href="#"><div style="height: 20px;"></div></a>
-                    </div>
-                    
-                    
                 </div>
-                <div class="row justify-content-md-center" style="border-bottom: 4px solid #808285; border-top: 4px solid #808285;">
+
+                <div class="row" style="margin-top: 20px;">
+                    <h6>Cor:</h6>
+                </div>
+                <div id="div_corProduto" class="row" >
+                    <a onclick="mudaEstilo(1)" href="#carouselProdutoImagens" data-target="#carouselProdutoImagens"
+                       data-slide-to="0" ><div class="coresSelecionar" style="background-color: white;">
+                            <span class="fa fa-check fa-lg"></span></div>
+                    </a>
+                    <a onclick="mudaEstilo(2)" href="#carouselProdutoImagens" data-target="#carouselProdutoImagens"
+                       data-slide-to="1" ><div class="coresSelecionar" style="background-color: red;">
+                            <span class="fa fa-check fa-lg"></span></div>
+                    </a>
+                    <a onclick="mudaEstilo(3)" href="#carouselProdutoImagens" data-target="#carouselProdutoImagens"
+                       data-slide-to="2" ><div class="coresSelecionar" style="background-color: black;">
+                            <span class="fa fa-check fa-lg"></span></div>
+                    </a>
+                    <a onclick="mudaEstilo(4)" href="#carouselProdutoImagens" data-target="#carouselProdutoImagens"
+                       data-slide-to="3" ><div class="coresSelecionar" style="background-color: green;">
+                            <span class="fa fa-check fa-lg"></span></div>
+                    </a>
+                </div>
+                <div class="row justify-content-md-center" style="margin-top: 20px; border-bottom: 4px solid #808285; border-top: 4px solid #808285;">
                     <div class="checkbox" style="width: 100%; ">
                         <label style="width: 100%; margin: 10px 10px;">
                             <input type="checkbox" value="">
@@ -145,7 +194,7 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-md-center" style="padding-top: 10px;">
+                <div class="row justify-content-md-center" style="margin-top: 20px;">
                     <div class="col">
                         <div class="row justify-content-md-center">
                             <h1 id="produto_preco">R$ 24,99 </h1>

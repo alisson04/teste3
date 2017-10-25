@@ -11,11 +11,23 @@ div#corpo{
 div#lateral{
     background-color: white;
     box-shadow: 5px 5px 15px #808285;
-    border: 1px solid black;
+    border: 2px solid #bababa;
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
     border-bottom-left-radius: 2px;
+}
+
+div#div_corProduto .col{
+    background-color: white;
+}
+
+div.coresSelecionar{
+    width: 25px;
+    height: 25px;
+    border: 1px solid #bababa;
+    padding: 0px 0px;
+    margin: 0px 0px;
 }
 
 div#lateral h1#produto_preco{

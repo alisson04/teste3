@@ -30,9 +30,12 @@ div.coresSelecionar{
     margin: 0px 0px;
 }
 
-div#lateral h1#produto_preco{
+input#cTotalProduto{
     color: #e84f25;
     font-weight: bold;
+    border: none;
+    font-size: 30px;
+    width: 100%;
 }
 
 div#lateral h3{
@@ -49,4 +52,37 @@ div#configProduto{
 div.passosConfigProduto{
     background-color: #FFFFFF; margin-bottom: 20px; padding: 10px 10px;
     border-bottom: 1px solid black;
+}
+
+/*SOCIAL LiNKS----------------------------------------------------------------*/
+ul#social_share {
+    list-style: none;
+}
+
+ul#social_share li{
+    display: inline-block;
+    padding: 0px 10px;
+}
+
+ul#social_share img{
+    width: 36px;
+    height: 36px;
+}
+
+/*DESCRIÇÃO PRODUTO-----------------------------------------------------------*/
+div.paginatorDescricaoProduto{
+    padding-bottom: 5px;
+}
+
+div.paginatorDescricaoProduto:hover{
+    text-transform: none;
+   text-decoration: none;
+    padding-bottom: 0px;
+}
+
+div.paginatorDescricaoProduto a{
+   text-decoration: none;
+   color:#77787b;
+   font-weight: bold;
+   padding: 0px 15px;
 }

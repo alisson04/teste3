@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+/*PRODUTOS----------------------------------------------------*/
+div.paginatorProdutos{
+    padding-bottom: 5px;
+}
+
+div.paginatorProdutos:hover{
+    text-transform: none;
+   text-decoration: none;
+    padding-bottom: 0px;
+}
+
+div.paginatorProdutos a{
+   text-decoration: none;
+   color:#77787b;
+   font-weight: bold;
+   padding: 0px 15px;
+   border-bottom: 4px solid #77787b;
+}
+
+div#div_produtos_mais_vendidos{/*container de produtos*/
+    margin-left: 10%; 
+    margin-right: 10%;
+}
+
+div#div_produtos_mais_vendidos .col{
+    padding: 10px;
+}
+
+.div_caixa_produto{/*caixa de exibição do produto*/
+    height: 450px;
+    background-color: white;
+    box-shadow: 5px 5px 5px #A9A9A9;
+    color: black;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.a_hover:hover{/*caixa de exibição do produto HOVER*/
+    text-decoration: none;
+}
+
+.texto_produto{
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+img.fotosProdutos{/*tamanho das imagens dos produtos*/
+    width: 100%;
+    padding-top: 10px;
+}
+
+/*BOTÕES OCULTOS DE PRODUTOS--------------------------------------------------*/
+.panel_de_botoes_ocultos {
+    position:relative; //Importante para que os botões estejam centralizados
+}
+.botoes_ocultos{
+    display:none; //garante que o botão não apareça na tela
+    margin:0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.panel_de_botoes_ocultos:hover .botoes_ocultos {
+    display:block; //Exibe os botões somente com o hover
+}

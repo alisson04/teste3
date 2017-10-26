@@ -10,11 +10,13 @@
         <!--CSS-->
         <link rel="stylesheet" type="text/css" href="_css/estilo.css"/>
         <link rel="stylesheet" type="text/css" href="_css/genericos/btns.css"/>
+        <link rel="stylesheet" type="text/css" href="_css/genericos/carouselProdutosGenerico.css"/>
         <link rel="stylesheet" type="text/css" href="_css/header_footer.css"/>
 
         <!--JAVASCRIPT-->
         <script language="javascript" src="_javascript/funcoes.js" ></script>
         <script language="javascript" src="_javascript/home.js" ></script>
+        <script language="javascript" src="_javascript/_genericos/paginatorProdutosGenerico.js" ></script>
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-beta/css/bootstrap.css" >

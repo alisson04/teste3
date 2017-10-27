@@ -7,7 +7,7 @@
  */
 require_once '_dao/DaoGenerico.php';
 
-class ProdutoController {
+class ClienteController {
 
     public function insert($produto) {
         $produtoDao = new DaoGenerico();

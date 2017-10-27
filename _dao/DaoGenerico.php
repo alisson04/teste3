@@ -32,7 +32,7 @@ class DaoGenerico {
         $sql = "SELECT $fields FROM $tabela $where";
         $stm = DB::prepare($sql);
         $stm->execute();
-        return $stm->fetchAll();
+        return $stm->fetch();
     }
 
 //Grava registros

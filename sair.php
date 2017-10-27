@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-unset($_SESSION['id'], $_SESSION['nome'], $_SESSION['email']);
+unset($_SESSION['cliente']);
 
 $_SESSION['msg'] = "Deslogado com sucesso";
 header("Location: login.php");

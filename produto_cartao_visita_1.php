@@ -119,7 +119,7 @@
                     }
                 </script>
                 <!--QUANTIDADE------------------------------------------------->
-                <div class="                                row" style="margin-top: 40px;">
+                <div class="row" style="margin-top: 40px;">
                     <div class="col-md-auto">
                         <input type="number" name="tQuantidade" id="cQuantidade" size="5" maxlength="5" value="1" min="1" required  
                                oninput="quanti();calc_total()"/>

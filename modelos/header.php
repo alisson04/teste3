@@ -1,5 +1,5 @@
 <?php
-$categoria = new Categoria();
+$categoria = new Categoria();//Necessário para listar as categorias de produtos
 ?>
 
 <!DOCTYPE html>
@@ -37,9 +37,16 @@ $categoria = new Categoria();
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xg-1">
                         <p class="text-center">
-                            Olá <a href="#" style="color: #27cbc0;">Entre</a> ou <a href="#" style="color: #27cbc0;">Cadastre-se</a>
+                            <?php
+                            if (!empty($_SESSION['cliente'])) {
+                                echo "Bem vindo " . $_SESSION['cliente']->nome . ". ";
+                                echo "<a href='sair.php'>Sair</a>";
+                            } else {
+                                ?>
+                                Olá <a href="login.php" style="color: #27cbc0;">Entre</a> ou <a href="#" style="color: #27cbc0;">Cadastre-se</a>
+                            <?php }
+                            ?>
                         </p>
-
                     </div>
                 </div>
             </div>

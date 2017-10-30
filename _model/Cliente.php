@@ -15,29 +15,37 @@ class Cliente extends DaoGenerico {
     private $senha;
     private $cpf_cnpj;
     private $cep;
+    private $status;
+    private $chave_confirmacao;
     
     private $tabela;
     private $dao;
-    
+
     //CONSTRUTOR
     public function __construct() {
+        $this->status = 0;
         $this->tabela = 'tbl_clientes';
         $this->dao = new DaoGenerico();
     }
-    
+
     //FUNCTIONS
     function insert() {
-        $obj = array('nome'=>$this->nome,'email'=>$this->email,'senha'=>$this->senha);
-        $this->dao->insertGenerico($this->tabela, $obj);
-    }
+        $obj = array('nome'=>$this->nome,'email'=>$this->email,'senha'=>$this->senha, 'status'=> $this->status, 'chave_confirmacao'=> $this->chave_confirmacao);
+        return $this->dao->insertGenerico($this->tabela, $obj);
+        }
 
     function findAllOrder() {
         return $this->dao->findAllOrderByGenerico($this->tabela, 'nome');
     }
-    
+
     function findById($id) {
-        $id = 'id ='.$id;
+        $id = 'id =' . $id;
         return $this->dao->findByWhereGenerico($this->tabela, $id);
+    }
+
+    function findByChave($chave) {
+        $chave = 'chave_confirmacao = ' . $chave;
+        return $this->dao->findByWhereGenerico($this->tabela, $chave);
     }
 
     //SETS e GETS
@@ -56,6 +64,7 @@ class Cliente extends DaoGenerico {
     public function setNome($nome) {
         $this->nome = $nome;
     }
+
     function getEmail() {
         return $this->email;
     }
@@ -86,5 +95,20 @@ class Cliente extends DaoGenerico {
 
     function setCep($cep) {
         $this->cep = $cep;
+    }
+    function getStatus() {
+        return $this->status;
+    }
+
+    function getChave_confirmacao() {
+        return $this->chave_confirmacao;
+    }
+
+    function setStatus($status) {
+        $this->status = $status;
+    }
+
+    function setChave_confirmacao($chave_confirmacao) {
+        $this->chave_confirmacao = $chave_confirmacao;
     }
 }

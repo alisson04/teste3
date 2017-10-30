@@ -46,20 +46,23 @@ if (!empty($_SESSION['cliente'])) {
 
                     <?php
                     if (isset($_SESSION['msg'])) {
-                        echo $_SESSION['msg'];
-                        unset($_SESSION['msg']);
+                        echo '<div class="alert alert-danger" role="alert">' . $_SESSION['msg'] . '</div>';
                     }
                     ?>
                 </form>
             </div><div class="col-6">
                 <?php
                 include './_model/Cliente.php';
+                include './enviarEmail.php';
+
                 if (isset($_POST['btnCadastrarCliente'])):
                     $obj = new Cliente();
                     $obj->setNome($_POST['tNome']);
                     $obj->setEmail($_POST['tEmail']);
                     $obj->setSenha($_POST['tSenha']);
+                    $obj->setChave_confirmacao(randString(30));
                     $obj->insert();
+                    enviaConfirmacaoEmail($obj->getEmail(), $obj->getNome(), $obj->getChave_confirmacao());
                 endif;
                 ?>
                 <h4>Cadastrar</h4>
@@ -76,7 +79,7 @@ if (!empty($_SESSION['cliente'])) {
                     <p><label for="cConfirmeSenha">Senha:</label>
                         <input type="password" name ="tConfirmeSenha" id="cConfirmeSenha" size="50" maxlength="50" placeholder="Digite a sua senha" required/>
                     </p>
-                    
+
                     <div class="g-recaptcha" data-sitekey="6LeZGzYUAAAAAPUS75BaFlztv2whbx6jZkWal9Ty"></div>
                     <input type="submit" name="btnCadastrarCliente" value="Cadastrar">
                 </form>

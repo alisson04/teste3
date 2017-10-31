@@ -17,6 +17,7 @@ if (!empty($_SESSION['cliente'])) {
         <link rel="stylesheet" type="text/css" href="_css/header_footer.css"/>
 
         <!--JAVASCRIPT-->
+        <script language="javascript" src="_javascript/_genericos/b.js" ></script>
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-beta/css/bootstrap.css" >
@@ -62,9 +63,12 @@ if (!empty($_SESSION['cliente'])) {
                     $obj->setSenha($_POST['tSenha']);
                     $obj->setChave_confirmacao(randString(30));
                     $obj->insert();
+
                     enviaConfirmacaoEmail($obj->getEmail(), $obj->getNome(), $obj->getChave_confirmacao());
                 endif;
                 ?>
+
+                <!--CADASTRAR////////////////////////////////////////////////-->
                 <h4>Cadastrar</h4>
                 <form method="POST" action="">
                     <p><label for="cNome">Nome:</label>
@@ -80,6 +84,7 @@ if (!empty($_SESSION['cliente'])) {
                         <input type="password" name ="tConfirmeSenha" id="cConfirmeSenha" size="50" maxlength="50" placeholder="Digite a sua senha" required/>
                     </p>
 
+                    <!--recaptcha-->
                     <div class="g-recaptcha" data-sitekey="6LeZGzYUAAAAAPUS75BaFlztv2whbx6jZkWal9Ty"></div>
                     <input type="submit" name="btnCadastrarCliente" value="Cadastrar">
                 </form>

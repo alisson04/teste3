@@ -35,6 +35,7 @@ session_start();
         <!--HEADER///////////////////////////////////////////////////////////-->
         <?php
         include './_model/Categoria.php';
+        include './_model/Produto.php';
         include"./modelos/header.php";
         ?>
 
@@ -118,6 +119,12 @@ session_start();
             </div>
         </div>
 
+        <?php
+        $produto = new Produto(); //Necessário para listar as categorias de produtos
+        ?>
+
+
+
         <!--Carousel dos produtos-->
         <div id="carouselProdutos" class="carousel slide" style="font-family: 'Open Sans', sans-serif;">
             <div class="carousel-inner">
@@ -125,70 +132,31 @@ session_start();
                 <div class="carousel-item active" >
                     <div id="div_produtos_mais_vendidos">
                         <div class="row justify-content-md-center">
-                            <div class="col">
-                                <a class="a_hover" href="produto_cartao_visita.php" style="display:block;">
-                                    <div class="div_caixa_produto" >
-                                        <div class="panel_de_botoes_ocultos"><!--Div de flutuação do botão oculto-->
-                                            <div class="botoes_ocultos"><!--Botões ocultos-->
-                                                <button type="button" class="btn btn-lg botao_color_e47650">CONFIRA</button>
-                                            </div>
-                                            <div class="text-center">
-                                                <h4 class="texto_produto">Cartão de Visita</h4>
-                                                <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.png" alt="Card image cap">
-                                                <h4 class="texto_produto">A partir de R$ 10,99</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col">
-                                <a class="a_hover" href="produto_cartao_visita.php" style="display:block;">
-                                    <div class="div_caixa_produto" >
-                                        <div class="panel_de_botoes_ocultos"><!--Div de flutuação do botão oculto-->
-                                            <div class="botoes_ocultos"><!--Botões ocultos-->
-                                                <button type="button" class="btn btn-lg botao_color_e47650">CONFIRA</button>
-                                            </div>
-                                            <div class="text-center">
-                                                <h4 class="texto_produto">Cartão de Visita</h4>
-                                                <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.png" alt="Card image cap">
-                                                <h4 class="texto_produto">A partir de R$ 10,99</h4>
+                            <?php foreach ($produto->findAllOrder() as $key => $value) { ?>
+                                <div class="col">
+                                    <a class="a_hover" href="produto_cartao_visita.php" style="display:block;">
+                                        <div class="div_caixa_produto" >
+                                            <div class="panel_de_botoes_ocultos"><!--Div de flutuação do botão oculto-->
+                                                <div class="botoes_ocultos"><!--Botões ocultos-->
+                                                    <?php
+                                                    //function salvaNoCarrinho($nome, q) {
+                                                    //  $arrayProdutos = array('nome' => $this->nome,
+                                                    //$_SESSION['cliente'] = $resultado_usuario;
+                                                    //}
+                                                    ?>
+                                                    <button type="button" class="btn btn-lg botao_color_e47650">CONFIRA</button>
+                                                </div>
+                                                <div class="text-center">
+                                                    <h4 class="texto_produto"><?php echo $value->nome; ?></h4>
+                                                    <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.png" alt="Card image cap">
+                                                    <h4 class="texto_produto">A partir de R$ 10,99</h4>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col">
-                                <a class="a_hover" href="produto-cartao-de-visita.html" style="display:block;">
-                                    <div class="div_caixa_produto" >
-                                        <div class="panel_de_botoes_ocultos"><!--Div de flutuação do botão oculto-->
-                                            <div class="botoes_ocultos"><!--Botões ocultos-->
-                                                <button type="button" class="btn btn-lg botao_color_e47650">CONFIRA</button>
-                                            </div>
-                                            <div class="text-center">
-                                                <h4 class="texto_produto">Cartão de Visita</h4>
-                                                <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.png" alt="Card image cap">
-                                                <h4 class="texto_produto">A partir de R$ 10,99</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col">
-                                <a class="a_hover" href="produto-cartao-de-visita.html" style="display:block;">
-                                    <div class="div_caixa_produto" >
-                                        <div class="panel_de_botoes_ocultos"><!--Div de flutuação do botão oculto-->
-                                            <div class="botoes_ocultos"><!--Botões ocultos-->
-                                                <button type="button" class="btn btn-lg botao_color_e47650">CONFIRA</button>
-                                            </div>
-                                            <div class="text-center">
-                                                <h4 class="texto_produto">Cartão de Visita</h4>
-                                                <img class="fotosProdutos" src="_imagens/produtos/cartaodevisita.png" alt="Card image cap">
-                                                <h4 class="texto_produto">A partir de R$ 10,99</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                                    </a>
+                                </div>
+                            <?php }
+                            ?>
                         </div>
                     </div>
                 </div>

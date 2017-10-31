@@ -28,7 +28,7 @@ function enviaConfirmacaoEmail($emailCliente, $nomeCliente, $chave) {
     $mail = new PHPMailer(true);                              // Passing `true` enables exceptions
     try {
         //Server settings
-        $mail->SMTPDebug = 2;                                 // Enable verbose debug output
+        //$mail->SMTPDebug = 2;                                 // Enable verbose debug output
         $mail->isSMTP();                                      // Set mailer to use SMTP
         $mail->Host = 'smtp.promoimpresso.com.br';  // Specify main and backup SMTP servers
         $mail->SMTPAuth = true;                               // Enable SMTP authentication
@@ -44,7 +44,7 @@ function enviaConfirmacaoEmail($emailCliente, $nomeCliente, $chave) {
         //$mail->addCC('cc@example.com');
         //$mail->addBCC('bcc@example.com');
         //Attachments
-        $mail->addAttachment("_imagens/icon/logo.png");         // Add attachments
+        $mail->addAttachment("_imagens/Image9.gif");         // Add attachments
         //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
         //Content
         $mail->isHTML(true);                                  // Set email format to HTML

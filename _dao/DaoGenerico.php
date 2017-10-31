@@ -26,10 +26,9 @@ class DaoGenerico {
     }
 
     //Buscar por ID
-    public static function findByWhereGenerico($tabela, $where = null, $fields = '*') {
+    public static function findByWhereSingleGenerico($tabela, $where = null, $fields = '*') {
         $where = ($where) ? "WHERE $where" : null;
         $sql = "SELECT $fields FROM $tabela $where";
-        echo $sql;
         $stm = DB::prepare($sql);
         $stm->execute();
         return $stm->fetch();
@@ -40,6 +39,14 @@ class DaoGenerico {
         $fields = implode(', ', array_keys($data));
         $values = "'" . implode("', '", $data) . "'";
         $sql = "INSERT INTO $table ($fields) VALUES ($values)";
+        $stm = DB::prepare($sql);
+        return $stm->execute();
+    }
+
+    //Grava registros
+    public static function updateGenerico($table, $data, $where = null) {
+        $sql = "UPDATE $table SET $data $where";
+        echo $sql;
         $stm = DB::prepare($sql);
         return $stm->execute();
     }

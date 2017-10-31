@@ -28,15 +28,24 @@
         include './_model/Cliente.php';
         $key = $_GET["key"];
 
-        echo $key;
-
         $obj = new Cliente();
-        $obj = $obj->findByChave($key);
-        
-        echo 'sadssa'.$obj->getId();
-        //if ($obj):
+        $t = $obj->findByChave($key);
+
+        if ($t){
+            echo $t->id;
+            $obj->setId($t->id);
+            $obj->setNome($t->nome);
+            $obj->setEmail($t->email);
+            $obj->setSenha($t->senha);
+            $obj->setCpf_cnpj($t->cpf_cnpj);
+            $obj->setCep($t->cep);
+            $obj->setStatus(1);
+            $obj->setChave_confirmacao('');
             
-        //endif;
+            $obj->update("WHERE id=".$t->id);
+        }else{
+            echo 'ERRROU';
+        }
         ?>
 
         <!--FOOTER////////////////////////////////////////////////////////-->

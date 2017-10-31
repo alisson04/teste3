@@ -17,7 +17,6 @@ class Cliente extends DaoGenerico {
     private $cep;
     private $status;
     private $chave_confirmacao;
-    
     private $tabela;
     private $dao;
 
@@ -30,9 +29,17 @@ class Cliente extends DaoGenerico {
 
     //FUNCTIONS
     function insert() {
-        $obj = array('nome'=>$this->nome,'email'=>$this->email,'senha'=>$this->senha, 'status'=> $this->status, 'chave_confirmacao'=> $this->chave_confirmacao);
-        return $this->dao->insertGenerico($this->tabela, $obj);
+        if (!$this->dao->findByWhereSingleGenerico($this->tabela, $this->email)) {
+            $obj = array('nome' => $this->nome, 'email' => $this->email, 'senha' => $this->senha, 'status' => $this->status, 'chave_confirmacao' => $this->chave_confirmacao);
+            return $this->dao->insertGenerico($this->tabela, $obj);
         }
+    }
+
+    function update($where) {
+        $set = "nome='$this->nome', email='$this->email', senha='$this->senha', cpf_cnpj='$this->cpf_cnpj', cep='$this->cep', "
+                . "status='$this->status', chave_confirmacao='$this->chave_confirmacao'";
+        return $this->dao->updateGenerico($this->tabela, $set, $where);
+    }
 
     function findAllOrder() {
         return $this->dao->findAllOrderByGenerico($this->tabela, 'nome');
@@ -40,12 +47,12 @@ class Cliente extends DaoGenerico {
 
     function findById($id) {
         $id = 'id =' . $id;
-        return $this->dao->findByWhereGenerico($this->tabela, $id);
+        return $this->dao->findByWhereSingleGenerico($this->tabela, $id);
     }
 
     function findByChave($chave) {
-        $chave = 'chave_confirmacao = ' . $chave;
-        return $this->dao->findByWhereGenerico($this->tabela, $chave);
+        $chave = "chave_confirmacao ='" . $chave . "'";
+        return $this->dao->findByWhereSingleGenerico($this->tabela, $chave);
     }
 
     //SETS e GETS
@@ -96,6 +103,7 @@ class Cliente extends DaoGenerico {
     function setCep($cep) {
         $this->cep = $cep;
     }
+
     function getStatus() {
         return $this->status;
     }
@@ -111,4 +119,5 @@ class Cliente extends DaoGenerico {
     function setChave_confirmacao($chave_confirmacao) {
         $this->chave_confirmacao = $chave_confirmacao;
     }
+
 }

@@ -1,9 +1,5 @@
 <?php
 session_start();
-if (empty($_SESSION['cliente'])) {
-    $_SESSION['msg'] = "Área restrita";
-    header("Location: login.php");
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,9 +23,62 @@ if (empty($_SESSION['cliente'])) {
         <!--HEADER///////////////////////////////////////////////////////////-->
         <?php
         include './_model/Categoria.php';
+        include './_model/Produto.php';
         include"./modelos/header.php";
+
+        $produto = new Produto(); //Necessário para listar as categorias de produtos
         ?>
-        dasdasdsa
+
+        <table border="1">
+            <?php if (!empty($_SESSION['carrinho'])) { ?>
+                <caption>Carrinho de compras</caption>
+                <tr style="background-color: #DCDCDC">
+                    <td>Produto</td>
+                    <td>Descrição</td>
+                    <td>Quantidade</td>
+                    <td>Preço unitário</td>
+                    <td>Total</td>
+                </tr>
+
+                <?php foreach ($_SESSION['carrinho'] as $key => $value) { ?>
+                    <tr>
+                        <?php $stdObj = $produto->findById($key) ?>
+                        <td><?php echo $stdObj->nome; ?></td>
+                        <td><?php echo $key; ?></td>
+                        <td><?php echo $value; ?></td>
+                        <td><?php echo "R$ ".$key; ?></td>
+                        <td><?php echo "R$ ".$key; ?></td>
+                        
+                        <td>
+                            <form name="excluir" action="BDexcluir.php" method="POST">
+                                <input type="hidden" name="excluirItemCarrinho" value=<?= $stdObj->id ?> />
+                                <input type="image" src="_imagens/delete.png" name="editar" name="editar"style="height: 36px; width: 36px;"  />
+                            </form>
+                        </td>
+                    </tr>
+                    <?php
+                }
+            } else {
+                echo 'Carrinho Vazio';
+            }
+            ?>
+        </table>
+
+        <form method="POST" action="utils/limparCarrinho.php">
+            <input type="submit"  name="btnLimparCarrinho" value="Limpar carrinho"
+                   class="btn botao_color_e47650">
+        </form>
+
+        <?php
+        /*if (isset($_POST['btnLimparCarrinho'])):
+            if (!empty($_SESSION['carrinho'])) {
+                unset($_SESSION['carrinho']);
+            }
+                                echo "<a href='sair.php'>Sair</a>";
+        endif;
+
+        */
+        ?>
         <!--FOOTER////////////////////////////////////////////////////////-->
         <?php
         $footer = "index";

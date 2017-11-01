@@ -70,7 +70,7 @@ if (!empty($_SESSION['cliente'])) {
 
                 <!--CADASTRAR////////////////////////////////////////////////-->
                 <h4>Cadastrar</h4>
-                <form method="POST" action="">
+                <form method="POST">
                     <p><label for="cNome">Nome:</label>
                         <input type="text" name ="tNome" id="cNome" size="50" maxlength="50" placeholder="Nome completo" required/>
                     </p>

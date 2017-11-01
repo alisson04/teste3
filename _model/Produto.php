@@ -37,11 +37,12 @@ class Produto extends DaoGenerico {
     }
 
     function findAllOrder() {
-        return $this->dao->findAllOrderByGenerico($this->tabela, 'nome');
+        return $this->dao->findAllOrderByGenerico($this->tabela, 'id, nome');
     }
 
     function findById($id) {
-        
+        $id = 'id =' . $id;
+        return $this->dao->findByWhereSingleGenerico($this->tabela, $id);
     }
 
     function findByChave($chave) {

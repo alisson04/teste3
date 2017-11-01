@@ -1,5 +1,5 @@
 <?php
-$categoria = new Categoria();//Necessário para listar as categorias de produtos
+$categoria = new Categoria(); //Necessário para listar as categorias de produtos
 ?>
 
 <!DOCTYPE html>
@@ -103,9 +103,18 @@ $categoria = new Categoria();//Necessário para listar as categorias de produtos
                 </div>
                 <!--CARRINHO DE COMPRAS-->
                 <div class="col-md-2"><!--Carrinhod de compras-->
-                    <img id="icon_carrinho_de_compras" class="icon" src="_imagens/icon/carrinho_de_compras.png" 
-                         onMouseOver="this.src = '_imagens/icon/carrinho_de_comprasVerde.png'"
-                         onMouseOut="this.src = '_imagens/icon/carrinho_de_compras.png'" alt="icon_menu" />
+                    <a href="carrinho.php"  >
+                        <img id="icon_carrinho_de_compras" class="icon" src="_imagens/icon/carrinho_de_compras.png" 
+                             onMouseOver="this.src = '_imagens/icon/carrinho_de_comprasVerde.png'"
+                             onMouseOut="this.src = '_imagens/icon/carrinho_de_compras.png'" alt="link_carrinho" >
+                        <span class="badge badge-light" style="background-color:#F08080; border-radius: 10px; color: white;">
+                            <?php if (empty($_SESSION['carrinho'])) {
+                                echo 0;
+                            }else{
+                                echo count(($_SESSION['carrinho']));
+                            }
+                            ?></span>
+                    </a>
                 </div>
             </div>
         </header>

@@ -120,10 +120,8 @@ session_start();
         </div>
 
         <?php
-        $produto = new Produto(); //Necessário para listar as categorias de produtos
+        $produto = new Produto(); //Necessário para listar os produtos
         ?>
-
-
 
         <!--Carousel dos produtos-->
         <div id="carouselProdutos" class="carousel slide" style="font-family: 'Open Sans', sans-serif;">
@@ -138,13 +136,12 @@ session_start();
                                         <div class="div_caixa_produto" >
                                             <div class="panel_de_botoes_ocultos"><!--Div de flutuação do botão oculto-->
                                                 <div class="botoes_ocultos"><!--Botões ocultos-->
-                                                    <?php
-                                                    //function salvaNoCarrinho($nome, q) {
-                                                    //  $arrayProdutos = array('nome' => $this->nome,
-                                                    //$_SESSION['cliente'] = $resultado_usuario;
-                                                    //}
-                                                    ?>
-                                                    <button type="button" class="btn btn-lg botao_color_e47650">CONFIRA</button>
+                                                    <form method="POST" action="utils/CarrinhoAdd.php">
+                                                        <input type="text" name ="tIdProduto" id="cIdProduto"  hidden
+                                                               value="<?php echo $value->id; ?>"/>
+                                                        <input type="submit"  name="btnCadastrarCliente" value="Comprar"
+                                                               class="btn btn-lg botao_color_e47650">
+                                                    </form>
                                                 </div>
                                                 <div class="text-center">
                                                     <h4 class="texto_produto"><?php echo $value->nome; ?></h4>

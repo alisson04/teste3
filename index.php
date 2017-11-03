@@ -36,10 +36,10 @@ session_start();
         <?php
         include './_model/Categoria.php';
         include './_model/Produto.php';
-        include"./modelos/header.php";
+        include './modelos/header.php';
         ?>
 
-        <!--CAROUSEL////////////////////////////////////////////////////////-->
+        <!--CAROUSEL/////////////////////////////////////////////////////////-->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"   >
             <div class="carousel-inner">
                 <div class="carousel-item active">

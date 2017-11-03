@@ -20,12 +20,6 @@
     </head>
 
     <script>
-        function calc_total() {
-            var qtd = parseFloat(document.getElementById('cQuantidade1').value);
-            tot = qtd * 0.3;
-            tot = parseFloat(tot.toFixed(3));
-            document.getElementById('cTot').value = tot;
-        }
     </script>
 
     <body style="font-family: 'Share Tech Mono', monospace; margin: 0px 0px 0px 0px;">

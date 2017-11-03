@@ -14,6 +14,7 @@ session_start();
         <link rel="stylesheet" type="text/css" href="_css/header_footer.css"/>
 
         <!--JAVASCRIPT-->
+        <script language="javascript" src="_javascript/carrinho.js" ></script>
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-beta/css/bootstrap.css" >
@@ -38,21 +39,38 @@ session_start();
                     <td>Quantidade</td>
                     <td>Preço unitário</td>
                     <td>Total</td>
+                    <td>Remover item</td>
                 </tr>
 
-                <?php foreach ($_SESSION['carrinho'] as $key => $value) { ?>
+                <?php
+                foreach ($_SESSION['carrinho'] as $key => $value) {
+                    //IDs e NAMES relativos para mandar por método java script
+                    $idIn = "cInQuantidade";
+                    $idOut = "cOutQuanti";
+                    $idTotal = "cTotalProduto";
+                    $idIn = $idIn . $key;
+                    $idOut = $idOut . $key;
+                    $idTotal = $idTotal . $key
+                    ?>
+
+                    <?php $stdObj = $produto->findById($key) ?>
                     <tr>
-                        <?php $stdObj = $produto->findById($key) ?>
                         <td><?php echo $stdObj->nome; ?></td>
-                        <td><?php echo $key; ?></td>
-                        <td><?php echo $value; ?></td>
-                        <td><?php echo "R$ ".$key; ?></td>
-                        <td><?php echo "R$ ".$key; ?></td>
-                        
+                        <td><?php echo "Descrição..." ?></td>
                         <td>
-                            <form name="excluir" action="BDexcluir.php" method="POST">
+                            <input id="<?php echo $idIn; ?>" name="tQuantidade" type="number" size="5" maxlength="5" value="1" min="1" required
+                                   oninput="quanti('<?php echo $idIn; ?>', '<?php echo $idOut; ?>'); 
+                                   calc_total('<?php echo $idIn; ?>', <?php echo $stdObj->preco; ?>, '<?php echo $idTotal; ?>');"/>
+                            <input id="<?php echo $idOut; ?>" name="tQuanti" style="border: none;" type="text" value="" readonly/>
+                        </td>
+                        <td><?php echo $stdObj->preco; ?></td>
+                        <td>
+                            <input id="<?php echo $idTotal; ?>" class="text-center" type="text" name="tTotalProduto" value="<?php echo $stdObj->preco; ?>" readonly/>
+                        </td>
+                        <td>
+                            <form name="excluir" action="utils/carrinhoDel.php" method="POST">
                                 <input type="hidden" name="excluirItemCarrinho" value=<?= $stdObj->id ?> />
-                                <input type="image" src="_imagens/delete.png" name="editar" name="editar"style="height: 36px; width: 36px;"  />
+                                <input type="image" src="_imagens/icon/remove.png" name="editar" name="editar"style="height: 36px; width: 36px;"  />
                             </form>
                         </td>
                     </tr>
@@ -68,17 +86,7 @@ session_start();
             <input type="submit"  name="btnLimparCarrinho" value="Limpar carrinho"
                    class="btn botao_color_e47650">
         </form>
-
-        <?php
-        /*if (isset($_POST['btnLimparCarrinho'])):
-            if (!empty($_SESSION['carrinho'])) {
-                unset($_SESSION['carrinho']);
-            }
-                                echo "<a href='sair.php'>Sair</a>";
-        endif;
-
-        */
-        ?>
+        <button type="button" class="btn btn-outline-primary" ><a href="formas_pagamento.php">Finalizar compra</a></button>
         <!--FOOTER////////////////////////////////////////////////////////-->
         <?php
         $footer = "index";

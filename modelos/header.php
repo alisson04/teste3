@@ -14,6 +14,8 @@ $categoria = new Categoria(); //Necessário para listar as categorias de produto
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         <!--JAVASCRIPT-->
         <script language="javascript" src="_javascript/header.js" ></script>
+        <!--FontAwesome -->
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
 
     <body>
@@ -27,7 +29,7 @@ $categoria = new Categoria(); //Necessário para listar as categorias de produto
                         <p class="text-center">
                             <a href="#" target="_parent" class="text-center">Central de ajuda
                                 <img id="icon_interrogacao" class="iconTopoCabecalho" src="_imagens/icon/icon_interrogacao.png" 
-                                     alt="icon_interrogacao"/> </a></p>
+                                     alt="icon_interrogacao"/></a></p>
                     </div>
                     <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2 col-xg-1" style="border-left: 1px solid #231f20; border-right: 1px solid #231f20;">
                         <p class="text-center">

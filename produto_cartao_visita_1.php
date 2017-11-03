@@ -17,8 +17,6 @@
         <script language="javascript" src="_javascript/_genericos/paginatorProdutosGenerico.js" ></script>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-beta/css/bootstrap.css" >
-        <!--FontAwesome -->
-        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <!--Fontes Gogle-->
         <link href="https://fonts.googleapis.com/css?family=Expletus+Sans" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Pragati+Narrow" rel="stylesheet"><!--Texto do produto-->
@@ -98,31 +96,12 @@
                         <button type="button" class="btn">Anexar arquivo</button>
                     </div>
                 </div>
-                <script>
-                    /*function somar() {
-                     $valor = parseInt(document.getElementById("cQuantidade").value);
-                     document.getElementById("cQuantidade").value = $valor + 1;
-                     }
-                     
-                     function sub() {
-                     $valor = parseInt(document.getElementById("cQuantidade").value);
-                     if ($valor <= 1) {
-                     document.getElementById("cQuantidade").value = $valor;
-                     } else {
-                     document.getElementById("cQuantidade").value = $valor - 1;
-                     }
-                     }*/
-
-                    function quanti() {
-                        $valor = document.getElementById("cQuantidade").value;
-                        document.getElementById("cQuanti").value = "/ " + $valor + " Unidades";
-                    }
-                </script>
+                
                 <!--QUANTIDADE------------------------------------------------->
                 <div class="row" style="margin-top: 40px;">
                     <div class="col-md-auto">
-                        <input type="number" name="tQuantidade" id="cQuantidade" size="5" maxlength="5" value="1" min="1" required  
-                               oninput="quanti();calc_total()"/>
+                        <input id="cQuantidade" type="number" name="tQuantidade"size="5" maxlength="5" value="1" min="1" required  
+                               oninput="quanti(cQuantidade, cQuanti); calc_total('cQuantidade', 24.99, 'cTotalProduto');"/>
                     </div>
                     <div class="col-md-auto">
                         <input style="border: none;" type="text" name="tQuanti" id="cQuanti"  value="" readonly/>
@@ -165,7 +144,7 @@
                 <div class="row justify-content-md-center" style="margin-top: 20px;">
                     <div class="col">
                         <div class="row justify-content-md-center">
-                            <input id="cTotalProduto" class="text-center" type="text" name="tTotalProduto" readonly/>
+                            <input id="cTotalProduto" class="text-center" type="text" name="tTotalProduto" value="R$ 24,99" readonly/>
                         </div>
                         <div class="row justify-content-md-center">
                             <h6>Unidade R$ 24,99</h6>

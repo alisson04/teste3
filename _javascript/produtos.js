@@ -27,16 +27,36 @@ function selecionaCorProduto(controle) {
     }
 }
 
-//CALCULA A QUANTIDADE DE PRODUTOS----------------------------------------------
-window.onload = function() {
+//CALCULA O PREÇO TOTAL DO PRODUTO----------------------------------------------
+window.onload = function () {
     calc_total();
 };
 
-function calc_total() {
-    var qtd = parseFloat(document.getElementById('cQuantidade').value);
-    tot = qtd * 24.99;
+function calc_total(idQuant, preco, idTotal) {
+    var qtd = parseFloat(document.getElementById(idQuant).value);
+    tot = qtd * preco;
     tot = parseFloat(tot.toFixed(4));
-    document.getElementById('cTotalProduto').value = "R$ " + tot;
+    document.getElementById(idTotal).value = "R$ " + tot;
+}
+
+/*function somar() {
+ $valor = parseInt(document.getElementById("cQuantidade").value);
+ document.getElementById("cQuantidade").value = $valor + 1;
+ }
+ 
+ function sub() {
+ $valor = parseInt(document.getElementById("cQuantidade").value);
+ if ($valor <= 1) {
+ document.getElementById("cQuantidade").value = $valor;
+ } else {
+ document.getElementById("cQuantidade").value = $valor - 1;
+ }
+ }*/
+
+//CALCULA A QUANTIDADE DE PRODUTOS----------------------------------------------
+function quanti() {
+    $valor = document.getElementById("cQuantidade").value;
+    document.getElementById("cQuanti").value = "/ " + $valor + " Unidades";
 }
 
 //PAGINATOR DESCRIÇÃO DO PRODUTO------------------------------------------------

@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.tabelaDados{
+    padding: 10px 10px;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+input{
+    font-weight: bold;
+    vertical-align: top;
+}

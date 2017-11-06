@@ -3,11 +3,11 @@
 session_start();
 
 $id = $_POST['tIdProduto'];
+$quanti = $_POST['cQuantidade'];
+
 if (empty($_SESSION['carrinho'])) {
-    $arrayProdutos = array($id => 1);
+    $arrayProdutos = array($id => $quanti);
     $_SESSION['carrinho'] = $arrayProdutos;
-    header("Location: ../index.php");
 } else {
-    $_SESSION['carrinho'][$id] = 1;
-    header("Location: ../index.php");
+    $_SESSION['carrinho'][$id] = $quanti;
 }   

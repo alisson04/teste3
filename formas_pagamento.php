@@ -1,8 +1,12 @@
 <?php
 session_start();
-if (empty($_SESSION['cliente'])) {
+if (empty($_SESSION['cliente'])) {//Cliente logado?
     $_SESSION['msg'] = "Área restrita";
     header("Location: login.php");
+} else {
+    if (empty($_SESSION['carrinho'])) {//Tem produtos no carrinho?
+        header("Location: carrinho.php");
+    }
 }
 ?>
 <!DOCTYPE html>

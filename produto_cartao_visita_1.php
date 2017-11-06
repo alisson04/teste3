@@ -96,12 +96,16 @@
                         <button type="button" class="btn">Anexar arquivo</button>
                     </div>
                 </div>
-                
+
                 <!--QUANTIDADE------------------------------------------------->
                 <div class="row" style="margin-top: 40px;">
                     <div class="col-md-auto">
-                        <input id="cQuantidade" type="number" name="tQuantidade"size="5" maxlength="5" value="1" min="1" required  
-                               oninput="quanti(cQuantidade, cQuanti); calc_total('cQuantidade', 24.99, 'cTotalProduto');"/>
+                        <form method="POST" action="utils/CarrinhoAdd.php">
+                            <input type="text" name ="tIdProduto" id="cIdProduto"  hidden
+                                   value="<?php echo $value->id; ?>"/>
+                            <input id="cQuantidade" type="number" name="tQuantidade"size="5" maxlength="5" value="1" min="1" required  
+                                   oninput="quanti(cQuantidade, cQuanti); calc_total('cQuantidade', 24.99, 'cTotalProduto');"/>
+                        </form>
                     </div>
                     <div class="col-md-auto">
                         <input style="border: none;" type="text" name="tQuanti" id="cQuanti"  value="" readonly/>

@@ -10,10 +10,17 @@ $categoria = new Categoria(); //Necessário para listar as categorias de produto
 
         <!--CSS-->
         <link rel="stylesheet" type="text/css" href="_css/header.css"/>
+        
         <!--fonte Google-->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        
         <!--JAVASCRIPT-->
         <script language="javascript" src="_javascript/header.js" ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><!--AJAX-->
+        
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-beta/css/bootstrap.css" >
+        
         <!--FontAwesome -->
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
@@ -81,7 +88,7 @@ $categoria = new Categoria(); //Necessário para listar as categorias de produto
                                 <div class="modal-body">
                                     <ul>
                                         <?php foreach ($categoria->findAllOrder() as $key => $value) { ?>
-                                            <li><a href="#"><?php echo $value->nome; ?></a></li>
+                                            <li><a href="produtos.php?idCategoria=<?php echo $value->id; ?>"><?php echo $value->nome; ?></a></li>
                                         <?php }
                                         ?>
                                     </ul>
@@ -120,7 +127,12 @@ $categoria = new Categoria(); //Necessário para listar as categorias de produto
                 </div>
             </div>
         </header>
-
         <div style="height: 100px;"></div><!--Importante para utilização do cabeçalho fixo-->
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="_javascript/jquery-3.2.1.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"  crossorigin="anonymous"></script>
+        <script src="bootstrap-4.0.0-beta/js/bootstrap.js" type="text/javascript"></script>
     </body>
 </html>

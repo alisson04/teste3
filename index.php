@@ -21,9 +21,6 @@ session_start();
         <script language="javascript" src="_javascript/home.js" ></script>
         <script language="javascript" src="_javascript/_genericos/paginatorProdutosGenerico.js" ></script>
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-beta/css/bootstrap.css" >
-
         <!--Fontes Gogle-->
         <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
@@ -152,8 +149,7 @@ session_start();
                                         </div>
                                     </a>
                                 </div>
-                            <?php }
-                            ?>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
@@ -350,11 +346,5 @@ session_start();
         $footer = "index";
         include"./modelos/footer.php";
         ?>
-
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="_javascript/jquery-3.2.1.js" type="text/javascript"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"  crossorigin="anonymous"></script>
-        <script src="bootstrap-4.0.0-beta/js/bootstrap.js" type="text/javascript"></script>
     </body>
 </html>

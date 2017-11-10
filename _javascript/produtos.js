@@ -142,18 +142,20 @@ function adicionarAoCarrinho() {
     var quant = document.getElementById("cQuantidade").value;
     var cor = document.getElementById("cCor").value;
     var mate = document.getElementById("cMaterial").value;
+    var prec = document.getElementById('cPrecoUnitario').value;
 
     if (id && tam && quant && cor && mate) {
         alert(id + " / " + tam + " / " + quant + " / " + cor + " / " + mate);
         $.ajax({
             type: 'post',
-            url: 'geradorPrecosProdutos.php',
+            url: 'CarrinhoAdd.php',
             data: {
                 produtoTamanho: tam,
-                produtoId: id,
+                produtoIdCat: id,
                 produtoQuantidade: quant,
                 produtoCor: cor,
-                produtoMaterial: mate
+                mate: mate,
+                produtoPreco: prec
             },
             success: function (response) {
                 document.getElementById("status").innerHTML = "Form Submitted Successfully";

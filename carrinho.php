@@ -24,10 +24,9 @@ session_start();
           <!--HEADER///////////////////////////////////////////////////////////-->
           <?php
           include './_model/Categoria.php';
-          include './_model/Produto.php';
           include"./modelos/header.php";
 
-          $produto = new Produto(); //Necessário para listar as categorias de produtos
+          $categoria = new Categoria(); //Necessário para listar as categorias de produtos
           ?>
 
           <div class="row no-gutters" style="margin-top: 30px; margin-bottom: 30px; margin-left: 10%; margin-right: 20%;">
@@ -46,33 +45,39 @@ session_start();
                         $idIn = "cInQuantidade";
                         $idTotal = "cTotalProduto";
                         $idIn = $idIn . $key;
-                        $idTotal = $idTotal . $key
+                        $idTotal = $idTotal . $key;
                         ?>
 
-                        <?php $stdObj = $produto->findById($key) ?>
+                        <?php                        var_dump($value);
+                        $stdObj = $categoria->findById($value['id']);//Pega a categoria do produto no banco
+                        $imagens = explode(";", $stdObj->imagens);//Pega a imagem do produto para exibir
+                        ?>
+
                         <tr style="background-color: #ffffff; border-top: 10px solid #e1e1e1;">
                             <td class="tabelaDados">
-                                <img src="_imagens/produtos/cartaodevisita.png" alt="First slide" style="width: 150px; height: 150px;">
-                                <?php echo $stdObj->nome . "Descrição... ..... .....  . ..  . . .. " ?></td>
+                                <img src=" <?php echo $imagens[0]; ?>" alt="First slide" style="width: 150px; height: 150px;">
+                                <?php echo $stdObj->nome ?></td>
+
                             <td class="tabelaDados">
-                                <input id="<?php echo $idIn; ?>" name="tQuantidade" type="number" size="5" maxlength="5" value="1" min="1" required
-                                       oninput="calc_total_qunti('<?php echo $idIn; ?>', <?php echo $stdObj->preco; ?>, '<?php echo $idTotal; ?>');"
-                                       style="border: none;"/>
+                                <?php echo "Dimensão: " . $value['tamanho']; ?><br/>
+                                <?php echo "Quantidade: " . $value['quantidade']; ?><br/>
+                                <?php echo "Cor: " . $value['cor']; ?><br/>
+                                <?php echo "Material: " . $value['material']; ?><br/>
                             </td>
-                            <td class="tabelaDados"><?php echo "R$ " . $stdObj->preco; ?></td>
+
+                            <td class="tabelaDados"><?php echo "R$ " . $value['preco']; ?></td>
+
                             <td class="tabelaDados" style="text-align: right;">
                                 <input id="<?php echo $idTotal; ?>" class="text-center" type="text" name="tTotalProduto" 
-                                       value="<?php echo "R$ " . $stdObj->preco; ?>" readonly style="border: none;" />
+                                       value="<?php echo "R$ " . $value['preco']; ?>" readonly style="border: none;" />
 
                                 <form  id="formRemoveItem" name="excluir" action="utils/carrinhoDel.php" method="POST">
-                                    <input type="hidden" name="excluirItemCarrinho" value=<?= $stdObj->id ?> />
+                                    <input type="hidden" name="excluirItemCarrinho" value=<?= $value['id']; ?> />
                                     <a href="#" onclick="document.getElementById('formRemoveItem').submit();" style="color: #ed1a3b">
                                         <i class="fa fa-trash-o fa-lg" aria-hidden="true"></i> Excluir</a>
                                 </form>
                             </td>
                         </tr>
-
-
                         <?php
                     }
                 } else {
@@ -106,12 +111,16 @@ session_start();
         </button>
 
         <!--$key == ID; $value == quantidade-->
-        <?php foreach ($_SESSION['carrinho'] as $key => $value) { ?>
-            <?php $stdObj = $produto->findById($key) ?>
-            <script>
-                somaTotalVenda('<?php echo $stdObj->preco; ?>', '<?php echo $value; ?>');
-            </script>
-        <?php } ?>
+        <?php if (!empty($_SESSION['carrinho'])) { ?>
+            <?php foreach ($_SESSION['carrinho'] as $key => $value) { ?>
+                <?php $stdObj = $produto->findById($key) ?>
+                <script>
+                    somaTotalVenda('<?php echo $stdObj->preco; ?>', '<?php echo $value; ?>');
+                </script>
+                <?php
+            }
+        }
+        ?>
 
         <!--FOOTER////////////////////////////////////////////////////////-->
         <?php

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,7 +39,7 @@
 
         <!--HEADER///////////////////////////////////////////////////////////-->
         <?php
-        include './_model/Categoria.php';
+        include "./_model/Categoria.php";
         include "./modelos/header.php";
 
         $idCategoria = ($_GET['idCategoria']); //Categoria que é mostrada na pag
@@ -48,6 +51,15 @@
         $tamanhos = explode(';', $stdObj->tamanhos);
         $imagens = explode(';', $stdObj->imagens);
         ?>
+
+        <span class="badge badge-light" style="background-color:#F08080; border-radius: 10px; color: white;">
+            <?php
+            if (empty($_SESSION['carrinho'])) {
+                echo 1011;
+            } else {
+                echo count(($_SESSION['carrinho']));
+            }
+            ?></span>
 
         <p id="status"></p>
         <div class="row no-gutters" style="margin: 20px 10%; ">
@@ -111,8 +123,7 @@
                     <label for="cMaterial">Material:</label><!--Seleciona o material-->
                     <select class="custom-select form-control" id="cMaterial" name="tMaterial" required 
                             onchange="return calc_total('<?php echo $stdObj->nome; ?>')">
-                                <?php foreach ($materiais as $key => $value) {
-                                    ?>
+                                <?php foreach ($materiais as $key => $value) { ?>
                             <option value="<?php echo $value; ?>">
                                 <?php echo $value; ?></option>
                         <?php } ?>
@@ -120,8 +131,7 @@
 
                     <label for="cCor">Cor:</label><!--Seleciona a cor-------------->
                     <select class="custom-select form-control" id="cCor" name="tCor" required onchange="return calc_total()">
-                        <?php foreach ($cores as $key => $value) {
-                            ?>
+                        <?php foreach ($cores as $key => $value) { ?>
                             <option value="<?php echo $value; ?>"><?php echo $value; ?></option>
                         <?php } ?>
                     </select>
@@ -189,14 +199,15 @@
                 <div class="row justify-content-md-center" style="margin-top: 20px;">
                     <div class="col">
                         <div class="row justify-content-md-center">
-                            <input id="cTotalProduto" class="text-center" type="text" name="tTotalProduto" value="R$ 24,99" readonly/>
+                            <input id="cTotalProduto" class="text-center" type="text" name="tTotalProduto" value="" readonly/>
                         </div>
                         <div class="row justify-content-md-center">
                             <input style="border: none;" type="text" name="tPrecoUnitario" id="cPrecoUnitario"  value="" readonly/>
                         </div>
                     </div>
                     <div class="col">
-                        <button type="button" class="btn botao_color_e47650" style="font-size: 25px; padding: 10px 30px;">COMPRAR</button>
+                        <button type="button" class="btn botao_color_e47650" style="font-size: 25px; padding: 10px 30px;"
+                                onclick="adicionarAoCarrinho()">COMPRAR</button>
                     </div>
                 </div>
 

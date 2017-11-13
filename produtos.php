@@ -137,9 +137,8 @@ session_start();
                     </select>
 
                     <label for="cTamanho">Tamanho:</label><!--Seleciona o tamanho-->
-                    <select class="custom-select form-control" id="cTamanho" name="tTamanho" 
-                            required onchange="return calc_total()">
-                                <?php foreach ($tamanhos as $key => $value) { ?>
+                    <select class="custom-select form-control" id="cTamanho" name="tTamanho" required onchange="return calc_total()">
+                        <?php foreach ($tamanhos as $key => $value) { ?>
                             <option value="<?php echo $value; ?>">
                                 <?php echo $value; ?></option>
                         <?php } ?>
@@ -152,9 +151,9 @@ session_start();
                 <div class="row" style="margin-top: 40px;">
                     <div class="col-md-auto">
                         <form method="POST" action="utils/CarrinhoAdd.php">
-                            <input type="text" name ="tIdProduto" id="cIdProduto"  hidden
+                            <input type="text" name ="tIdProduto" id="cIdProduto" hidden
                                    value="<?php echo $value->id; ?>"/>
-                            <input id="cQuantidade" type="number" name="tQuantidade"size="5" maxlength="5" value="1" min="1" required  
+                            <input id="cQuantidade" type="number" name="tQuantidade"size="5" maxlength="5" value="100" min="1" required  
                                    oninput="quanti(cQuantidade, cQuanti); calc_total();"/>
                         </form>
                     </div>

@@ -40,6 +40,14 @@
  }
  }
  */
+
+Number.prototype.formatMoney = function (c, d, t) {
+    var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d === undefined ? "," : d, t = t === undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+};
+
+// usando
+
 //CALCULA O PREÇO TOTAL E UNITARIO DO PRODUTO-----------------------------------
 window.onload = function () {
     calc_total();
@@ -59,13 +67,21 @@ function calc_total() {//EVITAR USAR Parametros porq a função é chamado no pr
         var preco = gerarPrecoPanfleto(material, tamanho, quantidade, cor);
         var tot = quantidade * preco.precoF;
         tot = tot + (preco.precoC * quantidade);
+    } else if (categoria === "Blocos") {
+        var preco = gerarPrecoBloco(material, tamanho, quantidade, cor);
+        var tot = quantidade * preco;
     } else {
 
     }
 
     //Seta o preço unitário e total na tela
-    document.getElementById('cTotalProduto').value = "R$ " + (tot).toLocaleString('pt-BR');
-    document.getElementById('cPrecoUnitario').value = "Preco unitário: R$ " + ((tot / quantidade).toFixed(4)).toLocaleString('pt-BR');
+    document.getElementById('cTotalProduto').value = "R$ " + (tot).formatMoney(2, ',', '.');
+    document.getElementById('cPrecoUnitario').value = "Preco unitário: R$ " + (tot / quantidade).formatMoney(2, ',', '.');
+}
+
+//PRODUTO BLOCO==================================================================================================================================
+function gerarPrecoBloco(material, tamanho, quantidade) {
+    
 }
 
 //PRODUTO BANNER=================================================================================================================================
@@ -119,7 +135,7 @@ function calculaBaseBanner(material, tamanho, porcentagem) {
     }
 }
 
-//PRODUTO PANFLETO----------------------------------------------------------------
+//PRODUTO PANFLETO===============================================================================================================================
 //O preco do panfleto é dado por um valor fixo(custo de produão que muda em 
 function gerarPrecoPanfleto(material, tamanho, quantidade, cor) {
     var precoCustoUnidade = 0;
@@ -193,14 +209,30 @@ function gerarPrecoPanfleto(material, tamanho, quantidade, cor) {
             }
 
             if (quantidade < 500) {//Esse If ELSE define a porcentagem que será usada no calculo, com base na quantidade
-                return calculaBasePanfleto(valor, 3.5);
+                return {precoF: valor * 3.5, precoC: valor};
             } else if (quantidade < 1000) {
-                return calculaBasePanfleto(valor, 2);
+                return {precoF: valor * 2, precoC: valor};
             } else {
-                return calculaBasePanfleto(valor, 1.5);
+                return {precoF: valor * 1.5, precoC: valor};
             }
         } else if (tamanho === "20 X 29") {
             var valor;//Recebe o preco unitario de acordo com a cor escolhida
+            var porcentagem;
+
+            if (cor === "1 X 0" || cor === "1 X 1") {
+                if (quantidade < 500) {//Esse If ELSE define a porcentagem que será usada no calculo, com base na quantidade
+                    porcentagem = 3.5;
+                } else {
+                    porcentagem = 1.5;
+                }
+            } else {
+                if (quantidade < 1000) {//Esse If ELSE define a porcentagem que será usada no calculo, com base na quantidade
+                    porcentagem = 1.5;
+                } else {
+                    porcentagem = 1;
+                }
+            }
+
             if (cor === "1 X 0") {//CORES
                 valor = 0.0725;
             } else if (cor === "1 X 1") {
@@ -213,8 +245,8 @@ function gerarPrecoPanfleto(material, tamanho, quantidade, cor) {
                 alert("ERRO GRAVE");
                 return 0;
             }
-                //FALTA CONSTRUIR O PARTE DE PORCENTAGEM EM RELAÇÂO A QUANTIDADE
-            
+
+            return {precoF: valor * porcentagem, precoC: valor};
         } else {
             alert("ERRO NO TAMANHO");
             return 0;
@@ -225,14 +257,11 @@ function gerarPrecoPanfleto(material, tamanho, quantidade, cor) {
     }
 }
 
-function calculaBasePanfleto(precoCustoUnidade, porcentagem) {//Calculo base dos panfletos
-    return {precoF: precoCustoUnidade * porcentagem, precoC: precoCustoUnidade};
-}
-
 //CALCULA A QUANTIDADE DE PRODUTOS----------------------------------------------
 function quanti() {
-    $valor = document.getElementById("cQuantidade").value;
-    document.getElementById("cQuanti").value = "/ " + $valor + " Unidades";
+    var valor = document.getElementById("cQuantidade").value;
+    valor = parseFloat(valor);
+    document.getElementById("cQuanti").value = "/ " + valor.formatMoney(0, ',', '.')  + " Unidades";
 }
 
 //PAGINATOR DESCRIÇÃO DO PRODUTO------------------------------------------------

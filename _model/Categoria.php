@@ -15,6 +15,10 @@ class Categoria extends DaoGenerico {
     private $cores;
     private $materiais;
     private $precos;
+    private $atributoEspecifico1;
+    private $atributoEspecifico2;
+    private $atributoEspecifico3;
+    
     private $tabela;
     private $dao;
 
@@ -89,5 +93,28 @@ class Categoria extends DaoGenerico {
 
     function setPrecos($precos) {
         $this->precos = $precos;
+    }
+    function getAtributoEspecifico1() {
+        return $this->atributoEspecifico1;
+    }
+
+    function getAtributoEspecifico2() {
+        return $this->atributoEspecifico2;
+    }
+
+    function getAtributoEspecifico3() {
+        return $this->atributoEspecifico3;
+    }
+
+    function setAtributoEspecifico1($atributoEspecifico1) {
+        $this->atributoEspecifico1 = $atributoEspecifico1;
+    }
+
+    function setAtributoEspecifico2($atributoEspecifico2) {
+        $this->atributoEspecifico2 = $atributoEspecifico2;
+    }
+
+    function setAtributoEspecifico3($atributoEspecifico3) {
+        $this->atributoEspecifico3 = $atributoEspecifico3;
     }
 }

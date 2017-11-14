@@ -144,6 +144,64 @@ session_start();
                         <?php } ?>
                     </select>
 
+                    <?php
+                    if (!$stdObj->atributoEspecifico1 == null) {
+                        $atributo1 = explode(';', $stdObj->atributoEspecifico1);
+                        ?>
+
+                        <label for="cAtributo1"><?php echo utf8_encode($atributo1[0]); ?></label><!--Seleciona o tamanho-->
+                        <select class="custom-select form-control" id="cAtributo1" name="tAtributo1" required onchange="return calc_total()">
+                            <?php
+                            foreach ($atributo1 as $key => $value) {
+                                if ($key != 0) {
+                                    ?>
+                                    <option value="<?php echo $value; ?>"><?php echo $value; ?></option>
+                                    <?php
+                                }
+                            }
+                            ?>
+                        </select>
+                        <?php
+                    }
+                    if (!$stdObj->atributoEspecifico2 == null) {
+                        $atributo2 = explode(';', $stdObj->atributoEspecifico2);
+                        ?>
+
+                        <label for="cAtributo2"><?php echo utf8_encode($atributo2[0]); ?></label><!--Seleciona o tamanho-->
+                        <select class="custom-select form-control" id="cAtributo2" name="tAtributo2" required onchange="return calc_total()">
+                            <?php
+                            foreach ($atributo2 as $key => $value) {
+                                if ($key != 0) {
+                                    ?>
+                                    <option value="<?php echo $value; ?>"><?php echo $value; ?></option>
+                                    <?php
+                                }
+                            }
+                            ?>
+                        </select>
+                    <?php
+                    }
+
+                    if (!$stdObj->atributoEspecifico3 == null) {
+                        $atributo3 = explode(';', $stdObj->atributoEspecifico3);
+                        ?>
+
+                        <label for="cAtributo3"><?php echo utf8_encode($atributo3[0]); ?></label><!--Seleciona o tamanho-->
+                        <select class="custom-select form-control" id="cAtributo3" name="tAtributo3" required onchange="return calc_total()">
+                            <?php
+                            foreach ($atributo3 as $key => $value) {
+                                if ($key != 0) {
+                                    ?>
+                                    <option value="<?php echo $value; ?>"><?php echo $value; ?></option>
+                                    <?php
+                                }
+                            }
+                            ?>
+                        </select>
+                    <?php }
+                    ?>
+
+
                     <input id="cId" type="text" value="<?php echo $stdObj->id; ?>" hidden/>
                 </form>
 
@@ -153,7 +211,7 @@ session_start();
                         <form method="POST" action="utils/CarrinhoAdd.php">
                             <input type="text" name ="tIdProduto" id="cIdProduto" hidden
                                    value="<?php echo $value->id; ?>"/>
-                            <input id="cQuantidade" type="number" name="tQuantidade"size="5" maxlength="5" value="100" min="1" required  
+                            <input id="cQuantidade" type="number" name="tQuantidade"size="5" maxlength="5" value="1" min="1" required  
                                    oninput="quanti(cQuantidade, cQuanti); calc_total();"/>
                         </form>
                     </div>

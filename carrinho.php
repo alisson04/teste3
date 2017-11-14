@@ -55,10 +55,10 @@ session_start();
 
                         <tr style="background-color: #ffffff; border-top: 10px solid #e1e1e1;">
                             <td class="tabelaDados">
-                                <img src=" <?php echo $imagens[0]; ?>" alt="First slide" style="width: 150px; height: 150px;">
-                                <?php echo $stdObj->nome ?></td>
+                                <img src=" <?php echo $imagens[0]; ?>" alt="First slide" style="width: 150px; height: 150px;"></td>
 
                             <td class="tabelaDados">
+                                <?php echo $stdObj->nome ?><br/>
                                 <?php echo "Dimensão: " . $value['tamanho']; ?><br/>
                                 <?php echo "Quantidade: " . $value['quantidade']; ?><br/>
                                 <?php echo "Cor: " . $value['cor']; ?><br/>
@@ -103,24 +103,18 @@ session_start();
                        value="0" readonly style="border: none; display: inline;"/>
             </div>
         </div>
-        <button type="button" class="btn btn-outline-primary" <?php echo empty($_SESSION['carrinho']) ? 'hidden' : ''; ?>><a href="formas_pagamento.php" >
+        <button type="button" class="btn btn-outline-primary" <?php echo empty($_SESSION['carrinho']) ? 'hidden' : ''; ?>>
+            <a href="formas_pagamento.php" >
                 Finalizar compra<i class="fa fa-arrow-right" aria-hidden="true"></i>
                 <input id="c_total_venda" class="text-center" type="number" name="tTotalProduto" 
                        value="2" readonly style="border: none;"/>
             </a>
         </button>
-
-        <!--$key == ID; $value == quantidade-->
-        <?php if (!empty($_SESSION['carrinho'])) { ?>
-            <?php foreach ($_SESSION['carrinho'] as $key => $value) { ?>
-                <?php $stdObj = $produto->findById($key) ?>
-                <script>
-                    somaTotalVenda('<?php echo $stdObj->preco; ?>', '<?php echo $value; ?>');
-                </script>
-                <?php
-            }
-        }
-        ?>
+          
+            
+          <a href="utils/limparCarrinho.php" >
+                Limpar carrinho<i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </a>
 
         <!--FOOTER////////////////////////////////////////////////////////-->
         <?php

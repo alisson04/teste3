@@ -67,9 +67,10 @@ function calc_total() {//EVITAR USAR Parametros porq a função é chamado no pr
         var preco = gerarPrecoPanfleto(material, tamanho, quantidade, cor);
         var tot = quantidade * preco.precoF;
         tot = tot + (preco.precoC * quantidade);
-    } else if (categoria === "Blocos") {
+    } else if (categoria === "Bloco") {
         var preco = gerarPrecoBloco(material, tamanho, quantidade, cor);
-        var tot = quantidade * preco;
+        var tot = quantidade * preco.precoF;
+        tot = tot + (preco.precoC * quantidade);
     } else {
 
     }
@@ -80,8 +81,65 @@ function calc_total() {//EVITAR USAR Parametros porq a função é chamado no pr
 }
 
 //PRODUTO BLOCO==================================================================================================================================
-function gerarPrecoBloco(material, tamanho, quantidade) {
-    
+function gerarPrecoBloco(material, tamanho, quantidade, cor) {
+    var atributo1 = document.getElementById('cAtributo1').value;
+    var valor;
+    var porcentagem;
+
+    if (material === "Papel copiativo(carbonado) 63GR") {
+        if (tamanho === "10 X 15") {
+            if (atributo1 === "1 Via" || atributo1 === "2 Vias") {
+                if (cor === "1 X 0") {
+                    valor = 2.32;
+                } else if (cor === "1 X 1") {
+                    valor = 3.32;
+                } else {
+
+                }
+
+                if (quantidade < 25) {
+                    porcentagem = 2.5;
+                } else {
+                    porcentagem = 2;
+                }
+            } else if (atributo1 === "3 Vias") {
+                valor = 3.23;
+
+                if (quantidade < 25) {
+                    porcentagem = 2.5;
+                } else {
+                    porcentagem = 2;
+                }
+            } else {
+                alert("err");
+            }
+
+            return {precoF: valor * porcentagem, precoC: valor};
+        } else if (tamanho === "15 X 21") {
+            if (atributo1 === "1 Via" || atributo1 === "2 Vias" || atributo1 === "3 Vias") {
+                valor = 0.5;
+
+                if (quantidade < 25) {//QUANTIDADE===
+                    porcentagem = 2.5;
+                } else {
+                    porcentagem = 2;
+                }
+            } else {
+                alert("err");
+            }
+            
+            return {precoF: valor * porcentagem, precoC: valor};
+        } else if (tamanho === "20 X 29") {
+
+        } else {
+
+        }
+    } else if (material === "Papel Offset 75GR") {
+
+    } else {
+
+    }
+
 }
 
 //PRODUTO BANNER=================================================================================================================================
@@ -261,7 +319,7 @@ function gerarPrecoPanfleto(material, tamanho, quantidade, cor) {
 function quanti() {
     var valor = document.getElementById("cQuantidade").value;
     valor = parseFloat(valor);
-    document.getElementById("cQuanti").value = "/ " + valor.formatMoney(0, ',', '.')  + " Unidades";
+    document.getElementById("cQuanti").value = "/ " + valor.formatMoney(0, ',', '.') + " Unidades";
 }
 
 //PAGINATOR DESCRIÇÃO DO PRODUTO------------------------------------------------
@@ -290,7 +348,7 @@ function adicionarAoCarrinho() {
     var mate = document.getElementById("cMaterial").value;
     var prec = document.getElementById('cPrecoUnitario').value;
     if (id && tam && quant && cor && mate) {
-        alert(id + " / " + tam + " / " + quant + " / " + cor + " / " + mate);
+        alert(id + " / " + tam + " / " + quant + " / " + cor + " / " + mate + " / " + prec);
         $.ajax({
             type: 'post',
             url: 'CarrinhoAdd.php',

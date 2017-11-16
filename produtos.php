@@ -52,19 +52,10 @@ session_start();
         $imagens = explode(';', $stdObj->imagens);
         ?>
 
-        <span class="badge badge-light" style="background-color:#F08080; border-radius: 10px; color: white;">
-            <?php
-            if (empty($_SESSION['carrinho'])) {
-                echo 1011;
-            } else {
-                echo count(($_SESSION['carrinho']));
-            }
-            ?></span>
-
         <p id="status"></p>
         <div class="row no-gutters" style="margin: 20px 10%; ">
             <!--SLIDE PRODUTO////////////////////////////////////////////////-->
-            <div class="col-8" id="corpo" style="padding: 20px 15%;">
+            <div class="col-7" id="corpo" style="padding: 20px 10%;">
                 <div id="carouselProdutoImagens" class="carousel slide" style="width: 100%;">
                     <div class="carousel-inner">
                         <?php
@@ -84,7 +75,7 @@ session_start();
                         ?>
                     </div>
                 </div>
-
+                
                 <!--Paginator dos produtos-->
                 <div class="container" style="padding-top: 30px; font-family: 'Open Sans', sans-serif;">
                     <div class="row justify-content-md-center">
@@ -99,7 +90,7 @@ session_start();
             </div>
 
             <!--TEXTO PRODUTO////////////////////////////////////////////////-->
-            <div class="col-4"  id="lateral" style="font-family: 'Pragati Narrow', sans-serif; padding: 20px;">
+            <div class="col-5"  id="lateral" style="font-family: 'Pragati Narrow', sans-serif; padding: 20px;">
                 <!--nome-->
                 <div class="row justify-content-md-center" style="margin-top: 20px;">
                     <h1 id="h1_nome_produto"     style="font-weight: bold;"><?php echo ($stdObj->nome); ?></h1>
@@ -179,7 +170,7 @@ session_start();
                             }
                             ?>
                         </select>
-                    <?php
+                        <?php
                     }
 
                     if (!$stdObj->atributoEspecifico3 == null) {
@@ -262,9 +253,10 @@ session_start();
                             <input style="border: none;" type="text" name="tPrecoUnitario" id="cPrecoUnitario"  value="" readonly/>
                         </div>
                     </div>
+                    <!--BOTÄO-->
                     <div class="col">
                         <button type="button" class="btn botao_color_e47650" style="font-size: 25px; padding: 10px 30px;"
-                                onclick="adicionarAoCarrinho()">COMPRAR</button>
+                                onclick="adicionarAoCarrinho(), AlteraConteudo()">COMPRAR</button>
                     </div>
                 </div>
 

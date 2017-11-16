@@ -10,17 +10,17 @@ $categoria = new Categoria(); //Necessário para listar as categorias de produto
 
         <!--CSS-->
         <link rel="stylesheet" type="text/css" href="_css/header.css"/>
-        
+
         <!--fonte Google-->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-        
+
         <!--JAVASCRIPT-->
         <script language="javascript" src="_javascript/header.js" ></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script><!--AJAX-->
-        
+
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-beta/css/bootstrap.css" >
-        
+
         <!--FontAwesome -->
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
@@ -110,16 +110,55 @@ $categoria = new Categoria(); //Necessário para listar as categorias de produto
                         </ul>
                     </nav>
                 </div>
+                <script>
+                    // Função que verifica se o navegador tem suporte AJAX 
+                    function AjaxF() {
+                        var ajax;
+
+                        try {
+                            ajax = new XMLHttpRequest();
+                        } catch (e) {
+                            try {
+                                ajax = new ActiveXObject("Msxml2.XMLHTTP");
+                            } catch (e) {
+                                try {
+                                    ajax = new ActiveXObject("Microsoft.XMLHTTP");
+                                } catch (e) {
+                                    alert("Seu browser não da suporte à AJAX!");
+                                    return false;
+                                }
+                            }
+                        }
+                        return ajax;
+                    }
+
+                    // Função que faz as requisição Ajax ao arquivo PHP
+                    function AlteraConteudo() {
+                        var ajax = AjaxF();
+
+                        ajax.onreadystatechange = function () {
+                            if (ajax.readyState === 4) {
+                                document.getElementById('div_carrinho_de_compras').innerHTML = ajax.responseText;
+                            }
+                        }
+
+                        ajax.open(false, "utils/util_carrinho.php", true);
+                        //ajax.open(false, "http://localhost/promo/produtos.php?idCategoria=60", true);
+                        ajax.setRequestHeader("Content-Type", "text/html");
+                        ajax.send();
+                    }
+                </script>
                 <!--CARRINHO DE COMPRAS-->
-                <div class="col-md-2"><!--Carrinhod de compras-->
+                <div id="div_carrinho_de_compras" class="col-md-2"><!--Carrinhod de compras-->
                     <a href="carrinho.php"  >
                         <img id="icon_carrinho_de_compras" class="icon" src="_imagens/icon/carrinho_de_compras.png" 
                              onMouseOver="this.src = '_imagens/icon/carrinho_de_comprasVerde.png'"
                              onMouseOut="this.src = '_imagens/icon/carrinho_de_compras.png'" alt="link_carrinho" >
                         <span class="badge badge-light" style="background-color:#F08080; border-radius: 10px; color: white;">
-                            <?php if (empty($_SESSION['carrinho'])) {
+                            <?php
+                            if (empty($_SESSION['carrinho'])) {
                                 echo 0;
-                            }else{
+                            } else {
                                 echo count(($_SESSION['carrinho']));
                             }
                             ?></span>
@@ -128,7 +167,7 @@ $categoria = new Categoria(); //Necessário para listar as categorias de produto
             </div>
         </header>
         <div style="height: 100px;"></div><!--Importante para utilização do cabeçalho fixo-->
-        
+
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="_javascript/jquery-3.2.1.js" type="text/javascript"></script>

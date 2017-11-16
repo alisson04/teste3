@@ -127,7 +127,7 @@ function gerarPrecoBloco(material, tamanho, quantidade, cor) {
             } else {
                 alert("err");
             }
-            
+
             return {precoF: valor * porcentagem, precoC: valor};
         } else if (tamanho === "20 X 29") {
 

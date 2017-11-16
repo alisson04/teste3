@@ -20,7 +20,7 @@ session_start();
         <link rel="stylesheet" type="text/css" href="bootstrap-4.0.0-beta/css/bootstrap.css" >
     </head>
 
-    <body style="font-family: 'Share Tech Mono', monospace; background-color: #ebebeb;" window"nome do método"();>
+    <body style="font-family: 'Share Tech Mono', monospace; background-color: #ebebeb;">
           <!--HEADER///////////////////////////////////////////////////////////-->
           <?php
           include './_model/Categoria.php';
@@ -29,7 +29,7 @@ session_start();
           $categoria = new Categoria(); //Necessário para listar as categorias de produtos
           ?>
 
-          <div class="row no-gutters" style="margin-top: 30px; margin-bottom: 30px; margin-left: 10%; margin-right: 20%;">
+        <div class="row no-gutters" style="margin-top: 30px; margin-bottom: 30px; margin-left: 10%; margin-right: 20%;">
             <table border="0">
                 <?php if (!empty($_SESSION['carrinho'])) { ?>
                     <tr style="background-color: #e1e1e1; text-transform: uppercase; font-weight: bold;">
@@ -48,9 +48,10 @@ session_start();
                         $idTotal = $idTotal . $key;
                         ?>
 
-                        <?php                        var_dump($value);
-                        $stdObj = $categoria->findById($value['id']);//Pega a categoria do produto no banco
-                        $imagens = explode(";", $stdObj->imagens);//Pega a imagem do produto para exibir
+                        <?php
+                        var_dump($value);
+                        $stdObj = $categoria->findById($value['id']); //Pega a categoria do produto no banco
+                        $imagens = explode(";", $stdObj->imagens); //Pega a imagem do produto para exibir
                         ?>
 
                         <tr style="background-color: #ffffff; border-top: 10px solid #e1e1e1;">
@@ -110,11 +111,11 @@ session_start();
                        value="2" readonly style="border: none;"/>
             </a>
         </button>
-          
-            
-          <a href="utils/limparCarrinho.php" >
-                Limpar carrinho<i class="fa fa-arrow-right" aria-hidden="true"></i>
-            </a>
+
+
+        <a href="utils/limparCarrinho.php" >
+            Limpar carrinho<i class="fa fa-arrow-right" aria-hidden="true"></i>
+        </a>
 
         <!--FOOTER////////////////////////////////////////////////////////-->
         <?php

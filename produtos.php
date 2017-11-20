@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,7 +41,6 @@ session_start();
 
         <!--HEADER///////////////////////////////////////////////////////////-->
         <?php
-        include "./_model/Categoria.php";
         include "./modelos/header.php";
 
         $idCategoria = ($_GET['idCategoria']); //Categoria que é mostrada na pag
@@ -192,7 +193,6 @@ session_start();
                     <?php }
                     ?>
 
-
                     <input id="cId" type="text" value="<?php echo $stdObj->id; ?>" hidden/>
                 </form>
 
@@ -259,7 +259,6 @@ session_start();
                                 onclick="adicionarAoCarrinho(), AlteraConteudo()">COMPRAR</button>
                     </div>
                 </div>
-
             </div>
         </div>
         <!--BOTÕES DE COMPARTINHAR--------------------------------------------->

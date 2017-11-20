@@ -2,11 +2,45 @@
 
 .tabelaDados{
     padding: 10px 10px;
-    font-weight: bold;
     vertical-align: top;
 }
 
 input{
-    font-weight: bold;
     vertical-align: top;
+}
+
+.links{
+    color: #32b7b2;
+    font-weight: bold;
+    padding: 30px 10px;
+}
+
+.btn-preto-branco{
+    border: 1px solid #959595;
+    background:#ebebeb;
+    height:50px;border-radius: 0px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.btn-preto-branco:hover{
+    background-color: #696969;
+    color: white;
+    cursor: pointer;     
+}
+
+.btn-verde-claro{
+    border: 1px solid #ffffff;
+    background:#00a99d;
+    height:50px;border-radius: 0px;
+    padding-left: 10%;
+    padding-right: 10%;
+    color: white;
+    text-transform: uppercase;
+}
+
+.btn-verde-claro:hover{
+    background-color: #696969;
+    color: white;
+    cursor: pointer;
 }

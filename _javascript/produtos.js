@@ -46,8 +46,6 @@ Number.prototype.formatMoney = function (c, d, t) {
     return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 };
 
-// usando
-
 //CALCULA O PREÇO TOTAL E UNITARIO DO PRODUTO-----------------------------------
 window.onload = function () {
     calc_total();
@@ -75,9 +73,12 @@ function calc_total() {//EVITAR USAR Parametros porq a função é chamado no pr
 
     }
 
-    //Seta o preço unitário e total na tela
-    document.getElementById('cTotalProduto').value = "R$ " + (tot).formatMoney(2, ',', '.');
-    document.getElementById('cPrecoUnitario').value = "Preco unitário: R$ " + (tot / quantidade).formatMoney(2, ',', '.');
+    /*Seta o preço unitário e total na tela
+     document.getElementById('cTotalProduto').value = "R$ " + (tot).formatMoney(2, ',', '.');
+     document.getElementById('cPrecoUnitario').value = "Preco unitário: R$ " + (tot / quantidade).formatMoney(2, ',', '.');
+     */
+    document.getElementById('cTotalProduto').value = "R$ " + tot.toFixed(2);
+    document.getElementById('cPrecoUnitario').value = "Preco unitário: R$ " + (tot / quantidade).toFixed(2);
 }
 
 //PRODUTO BLOCO==================================================================================================================================
@@ -139,7 +140,6 @@ function gerarPrecoBloco(material, tamanho, quantidade, cor) {
     } else {
 
     }
-
 }
 
 //PRODUTO BANNER=================================================================================================================================
@@ -346,25 +346,27 @@ function adicionarAoCarrinho() {
     var quant = document.getElementById("cQuantidade").value;
     var cor = document.getElementById("cCor").value;
     var mate = document.getElementById("cMaterial").value;
-    var prec = document.getElementById('cPrecoUnitario').value;
-    if (id && tam && quant && cor && mate) {
-        alert(id + " / " + tam + " / " + quant + " / " + cor + " / " + mate + " / " + prec);
-        $.ajax({
-            type: 'post',
-            url: 'CarrinhoAdd.php',
-            data: {
-                produtoTamanho: tam,
-                produtoIdCat: id,
-                produtoQuantidade: quant,
-                produtoCor: cor,
-                mate: mate,
-                produtoPreco: prec
-            },
-            success: function (response) {
-                document.getElementById("status").innerHTML = "Form Submitted Successfully";
-                ;
-            }
-        });
-    }
+    var prec = (document.getElementById('cPrecoUnitario').value).split('$')[1];//Pega o texto do campo produto; separa pelos ":"; pega oque tiver depois
+    var total = (document.getElementById('cTotalProduto').value).split('$')[1];
+    alert(total);
+
+    $.ajax({
+        type: 'post',
+        url: 'CarrinhoAdd.php',
+        data: {
+            produtoTamanho: tam,
+            produtoIdCat: id,
+            produtoQuantidade: quant,
+            produtoCor: cor,
+            mate: mate,
+            produtoPreco: prec,
+            total: total
+        },
+        success: function (response) {
+            document.getElementById("status").innerHTML = "Form Submitted Successfully";
+            ;
+        }
+    });
+
     return false;
 }
